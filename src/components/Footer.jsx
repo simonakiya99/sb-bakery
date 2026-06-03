@@ -1,32 +1,36 @@
+import { useLang } from '../context/LanguageContext'
+import { translations } from '../i18n/translations'
+
 function Footer() {
+  const { lang } = useLang()
+  const T = translations[lang]
+
   return (
     <>
       <footer id="contact" data-animate>
         <div className="footer-brand">
           <span className="footer-logo">La <span className="gold">Douceur</span></span>
-          <p>Ambachtelijke luxe taarten gemaakt met liefde en passie. Voor elk bijzonder moment in uw leven.</p>
+          <p>{T.footer_desc}</p>
         </div>
         <div className="footer-col">
-          <h4>Navigatie</h4>
+          <h4>{T.footer_nav_title}</h4>
           <ul>
-            <li><a href="#galerij">Onze taarten</a></li>
-            <li><a href="#bestelling">Bestellen</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="#galerij">{T.footer_nav_cakes}</a></li>
+            <li><a href="#bestelling">{T.footer_nav_order}</a></li>
+            <li><a href="#contact">{T.footer_nav_contact}</a></li>
           </ul>
         </div>
         <div className="footer-col">
-          <h4>Contact</h4>
+          <h4>{T.footer_contact_title}</h4>
           <ul>
             <li><a href="#">info@ladouceur.nl</a></li>
             <li><a href="#">06 XX XX XX XX</a></li>
             <li><a href="#">Instagram</a></li>
-            <li><a href="#">WhatsApp bestellen</a></li>
+            <li><a href="#">WhatsApp</a></li>
           </ul>
         </div>
       </footer>
-      <div className="footer-bottom">
-        © 2024 La Douceur — Alle rechten voorbehouden
-      </div>
+      <div className="footer-bottom">{T.footer_bottom}</div>
     </>
   )
 }

@@ -1,112 +1,147 @@
 import { useState } from 'react'
+import { useLang } from '../context/LanguageContext'
+import { translations } from '../i18n/translations'
 
 const cakes = [
   {
     id: 1,
-    title: "Romantische Bruidstaart",
-    category: "bruiloft",
-    price: "Vanaf €180",
-    desc: "Drielaags fondanttaart met gouden accenten en verse rozen.",
-    img: "https://images.unsplash.com/photo-1535254973040-607b474cb50d?w=600&q=80"
+    title: { nl: 'Romantische Bruidstaart', ti: 'ሮማንቲካዊ ናይ መርዓ ኬክ' },
+    category: 'bruiloft',
+    price: '€180',
+    desc: {
+      nl: 'Drielaags fondanttaart met gouden accenten en verse rozen.',
+      ti: 'ሰለስተ ጽፍሒ ናይ ፎንዳን ኬክ ምስ ናይ ወርቂ ስፍሓትን ሓደሽቲ ጽጌረዳን።'
+    },
+    img: 'https://images.unsplash.com/photo-1535254973040-607b474cb50d?w=600&q=80'
   },
   {
     id: 2,
-    title: "Klassieke Witte Bruidstaart",
-    category: "bruiloft",
-    price: "Vanaf €220",
-    desc: "Elegante witte taart met parelmoer decoratie en suikerbloemen.",
-    img: "https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=600&q=80"
+    title: { nl: 'Klassieke Witte Bruidstaart', ti: 'ክላሲካዊ ጻዕዳ ናይ መርዓ ኬክ' },
+    category: 'bruiloft',
+    price: '€220',
+    desc: {
+      nl: 'Elegante witte taart met parelmoer decoratie en suikerbloemen.',
+      ti: 'ናይ ዕንቍ ሕብርን ናይ ሽኮር ዕምባባን ዘለዎ ጸጋዕ ጻዕዳ ኬክ።'
+    },
+    img: 'https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=600&q=80'
   },
   {
     id: 3,
-    title: "Gouden Luxe Bruidstaart",
-    category: "bruiloft",
-    price: "Vanaf €250",
-    desc: "Vijflaagse taart met bladgoud en handgeschilderde details.",
-    img: "https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?w=600&q=80"
+    title: { nl: 'Gouden Luxe Bruidstaart', ti: 'ናይ ወርቂ ሉኹስ ናይ መርዓ ኬክ' },
+    category: 'bruiloft',
+    price: '€250',
+    desc: {
+      nl: 'Vijflaagse taart met bladgoud en handgeschilderde details.',
+      ti: 'ሓሙሽተ ጽፍሒ ዘለዎ ናይ ወርቂ ቅጠልን ብኢድ ዝተሳእለ ዝርዝርን ዘለዎ ኬክ።'
+    },
+    img: 'https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?w=600&q=80'
   },
   {
     id: 4,
-    title: "Verjaardagstaart Roze",
-    category: "verjaardag",
-    price: "Vanaf €65",
-    desc: "Vrolijke roze taart met sprinkles en gepersonaliseerde tekst.",
-    img: "https://images.unsplash.com/photo-1558636508-e0db3814bd1d?w=600&q=80"
+    title: { nl: 'Verjaardagstaart Roze', ti: 'ቀያሕ ናይ ልደት ኬክ' },
+    category: 'verjaardag',
+    price: '€65',
+    desc: {
+      nl: 'Vrolijke roze taart met sprinkles en gepersonaliseerde tekst.',
+      ti: 'ሕብራዊ ናይ ልደት ኬክ ምስ ፍሉይ ጽሑፍ።'
+    },
+    img: 'https://images.unsplash.com/photo-1558636508-e0db3814bd1d?w=600&q=80'
   },
   {
     id: 5,
-    title: "Chocolade Verjaardagstaart",
-    category: "verjaardag",
-    price: "Vanaf €70",
-    desc: "Rijke chocoladetaart met ganache en goudkleurige decoratie.",
-    img: "https://images.unsplash.com/photo-1606890737304-57a1ca8a5b62?w=600&q=80"
+    title: { nl: 'Chocolade Verjaardagstaart', ti: 'ናይ ቸኮሌት ልደት ኬክ' },
+    category: 'verjaardag',
+    price: '€70',
+    desc: {
+      nl: 'Rijke chocoladetaart met ganache en goudkleurige decoratie.',
+      ti: 'ሃብታም ናይ ቸኮሌት ኬክ ምስ ናይ ወርቂ ሕብሪ ጌጋ።'
+    },
+    img: 'https://images.unsplash.com/photo-1606890737304-57a1ca8a5b62?w=600&q=80'
   },
   {
     id: 6,
-    title: "Regenboog Verjaardagstaart",
-    category: "verjaardag",
-    price: "Vanaf €75",
-    desc: "Kleurrijke laagjestaart — perfect voor kinderverjaardagen.",
-    img: "https://images.unsplash.com/photo-1562777717-dc6984f65a63?w=600&q=80"
+    title: { nl: 'Regenboog Verjaardagstaart', ti: 'ናይ ቀስተ ደበና ልደት ኬክ' },
+    category: 'verjaardag',
+    price: '€75',
+    desc: {
+      nl: 'Kleurrijke laagjestaart — perfect voor kinderverjaardagen.',
+      ti: 'ሕብረ-ሕብሪ ናይ ጽፍሒ ኬክ — ንናይ ቆልዑ ልደት ፍጹም።'
+    },
+    img: 'https://images.unsplash.com/photo-1562777717-dc6984f65a63?w=600&q=80'
   },
   {
     id: 7,
-    title: "Glutenvrije Citroentaart",
-    category: "speciaal",
-    price: "Vanaf €75",
-    desc: "Frisse citroentaart, 100% glutenvrij en heerlijk luchtig.",
-    img: "https://images.unsplash.com/photo-1519869325930-281384150729?w=600&q=80"
+    title: { nl: 'Glutenvrije Citroentaart', ti: 'ናይ ሎሚ ኬክ ብዘይ ግሉተን' },
+    category: 'speciaal',
+    price: '€75',
+    desc: {
+      nl: 'Frisse citroentaart, 100% glutenvrij en heerlijk luchtig.',
+      ti: 'ሓደሽቲ ናይ ሎሚ ኬክ፣ 100% ካብ ግሉተን ናጻ።'
+    },
+    img: 'https://images.unsplash.com/photo-1519869325930-281384150729?w=600&q=80'
   },
   {
     id: 8,
-    title: "Vegan Chocoladetaart",
-    category: "speciaal",
-    price: "Vanaf €80",
-    desc: "Rijke vegan chocoladetaart zonder dierlijke producten.",
-    img: "https://images.unsplash.com/photo-1571115177098-24ec42ed204d?w=600&q=80"
+    title: { nl: 'Vegan Chocoladetaart', ti: 'ቪጋን ናይ ቸኮሌት ኬክ' },
+    category: 'speciaal',
+    price: '€80',
+    desc: {
+      nl: 'Rijke vegan chocoladetaart zonder dierlijke producten.',
+      ti: 'ሃብታም ቪጋን ናይ ቸኮሌት ኬክ ብዘይ ናይ እንስሳ ፍርያት።'
+    },
+    img: 'https://images.unsplash.com/photo-1571115177098-24ec42ed204d?w=600&q=80'
   },
   {
     id: 9,
-    title: "Halal Aardbeientaart",
-    category: "speciaal",
-    price: "Vanaf €70",
-    desc: "Luchtige aardbeientaart met halal gecertificeerde ingrediënten.",
-    img: "https://images.unsplash.com/photo-1488477181946-6428a0291777?w=600&q=80"
+    title: { nl: 'Halal Aardbeientaart', ti: 'ሃላል ናይ ሓምሓም ኬክ' },
+    category: 'speciaal',
+    price: '€70',
+    desc: {
+      nl: 'Luchtige aardbeientaart met halal gecertificeerde ingrediënten.',
+      ti: 'ሃሊ ናይ ሓምሓም ኬክ ምስ ሃላል ዝተረጋገጹ ረቛሒታት።'
+    },
+    img: 'https://images.unsplash.com/photo-1488477181946-6428a0291777?w=600&q=80'
   }
-]
-
-const filters = [
-  { key: 'alle', label: 'Alle taarten' },
-  { key: 'bruiloft', label: 'Bruidstaarten' },
-  { key: 'verjaardag', label: 'Verjaardagen' },
-  { key: 'speciaal', label: 'Speciaal' },
 ]
 
 function Gallery() {
   const [active, setActive] = useState('alle')
   const [hoveredId, setHoveredId] = useState(null)
+  const { lang } = useLang()
+  const T = translations[lang]
 
-  const filtered = active === 'alle'
-    ? cakes
-    : cakes.filter(c => c.category === active)
+  const filters = [
+    { key: 'alle', label: T.filter_all },
+    { key: 'bruiloft', label: T.filter_wedding },
+    { key: 'verjaardag', label: T.filter_birthday },
+    { key: 'speciaal', label: T.filter_special },
+  ]
+
+  const filtered = active === 'alle' ? cakes : cakes.filter(c => c.category === active)
+
+  const getCategoryTag = (category) => {
+    if (category === 'bruiloft') return T.tag_wedding
+    if (category === 'verjaardag') return T.tag_birthday
+    return T.tag_special
+  }
 
   const orderCake = (cake) => {
     const select = document.querySelector('.order-select')
     const textarea = document.querySelector('.order-textarea')
     if (select) {
-      if (cake.category === 'bruiloft') select.value = 'Bruidstaart'
-      else if (cake.category === 'verjaardag') select.value = 'Verjaardagstaart'
-      else select.value = 'Speciale taart'
+      if (cake.category === 'bruiloft') select.value = T.option_wedding
+      else if (cake.category === 'verjaardag') select.value = T.option_birthday
+      else select.value = T.option_special
     }
-    if (textarea) textarea.value = `Ik ben geïnteresseerd in: ${cake.title}`
+    if (textarea) textarea.value = cake.title[lang]
     document.getElementById('bestelling')?.scrollIntoView({ behavior: 'smooth' })
   }
 
   return (
     <section className="gallery-section" id="galerij" data-animate>
       <div className="section-header">
-        <span className="section-tag">Onze creaties</span>
-        <h2 className="section-title">Kies uw <em>droomtaart</em></h2>
+        <span className="section-tag">{T.gallery_tag}</span>
+        <h2 className="section-title">{T.gallery_title_pre}<em>{T.gallery_title_em}</em></h2>
         <div className="divider"></div>
       </div>
 
@@ -133,7 +168,7 @@ function Gallery() {
             <div className="gallery-img-wrap">
               <img
                 src={cake.img}
-                alt={cake.title}
+                alt={cake.title[lang]}
                 loading="lazy"
                 style={{
                   transform: hoveredId === cake.id ? 'scale(1.08)' : 'scale(1)',
@@ -152,17 +187,15 @@ function Gallery() {
                     transition: 'all 0.4s ease'
                   }}
                 >
-                  Bestel deze taart
+                  {T.btn_order_cake}
                 </button>
               </div>
             </div>
             <div className="gallery-card-body">
-              <span className="cake-card-tag">
-                {cake.category === 'bruiloft' ? 'Bruiloft' : cake.category === 'verjaardag' ? 'Verjaardag' : 'Speciaal'}
-              </span>
-              <h3 className="gallery-card-title">{cake.title}</h3>
-              <p className="gallery-card-desc">{cake.desc}</p>
-              <span className="cake-card-price">{cake.price}</span>
+              <span className="cake-card-tag">{getCategoryTag(cake.category)}</span>
+              <h3 className="gallery-card-title">{cake.title[lang]}</h3>
+              <p className="gallery-card-desc">{cake.desc[lang]}</p>
+              <span className="cake-card-price">{T.price_from} {cake.price}</span>
             </div>
           </div>
         ))}
