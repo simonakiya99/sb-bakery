@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(cmdkey /delete:git:https://github.com)",
+      "Bash(git remote *)",
+      "Bash(git push *)",
+      "PowerShell(cmdkey /delete:\"GitHub for Visual Studio - https://Samiakiya@github.com/\")",
+      "PowerShell(cmdkey /delete:\"git:https://Samiakiya@github.com\")",
+      "PowerShell(cmdkey /delete:\"GitHub - https://api.github.com/Samiakiya\")"
+    ]
+  }
+}
