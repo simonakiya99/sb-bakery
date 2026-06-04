@@ -22,8 +22,6 @@ function Hero() {
           <div className="hero-vignette" />
         </div>
 
-        <div className="hero-ornament">✦</div>
-
         <div className="hero-content">
           <div className="hero-badge-line" />
           <div className="hero-badge">{T.hero_badge}</div>
@@ -42,16 +40,6 @@ function Hero() {
             </button>
           </div>
         </div>
-
-        <div className="hero-img-badge">
-          <span className="hero-img-badge-num">200+</span>
-          <span className="hero-img-badge-text">{T.hero_badge_customers}</span>
-        </div>
-
-        <div className="hero-scroll">
-          <span className="hero-scroll-label">Scroll</span>
-          <span className="hero-scroll-line" />
-        </div>
       </section>
 
       <div className="stats-bar" data-animate>
@@ -60,16 +48,12 @@ function Hero() {
           <span className="stat-label">{T.stat_customers}</span>
         </div>
         <div className="stat-item">
-          <span className="stat-number">5★</span>
-          <span className="stat-label">{T.stat_rating}</span>
-        </div>
-        <div className="stat-item">
           <span className="stat-number">100%</span>
           <span className="stat-label">{T.stat_handmade}</span>
         </div>
         <div className="stat-item">
-          <span className="stat-number">3+</span>
-          <span className="stat-label">{T.stat_certifications}</span>
+          <span className="stat-number">{T.stat_halal_num}</span>
+          <span className="stat-label">{T.stat_halal}</span>
         </div>
       </div>
     </>

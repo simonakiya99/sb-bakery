@@ -2,6 +2,7 @@ export const translations = {
   nl: {
     // NAVBAR
     nav_taarten: 'Taarten',
+    nav_about: 'Over ons',
     nav_bestellen: 'Bestellen',
     nav_contact: 'Contact',
     nav_cta: 'Bestel nu',
@@ -19,9 +20,9 @@ export const translations = {
 
     // STATS
     stat_customers: 'Blije klanten',
-    stat_rating: 'Beoordeling',
     stat_handmade: 'Handgemaakt',
-    stat_certifications: 'Keurmerken',
+    stat_halal_num: 'Halal',
+    stat_halal: '& Glutenvrij op aanvraag',
 
     // GALLERY
     gallery_tag: 'Onze creaties',
@@ -69,6 +70,27 @@ export const translations = {
     // PRICES
     price_from: 'Vanaf',
 
+    // ABOUT
+    about_tag: 'Ons Verhaal',
+    about_title_pre: 'Gemaakt met ',
+    about_title_em: 'liefde',
+    about_title_post: ', gebakken met passie',
+    about_text1: 'La Douceur is ontstaan ​​uit een diepe liefde voor het bakken van taarten en gebak. Elke taart die ik maak is een fantastisch kunstwerk – van de fijnste details tot de kleinste details.',
+    about_text2: 'Ik heb een groot aantal tevreden klanten. Kwaliteit en persoonlijke aandacht staan ​​centraal in al mijn werk.',
+    about_value1_title: 'Ambachtelijk Handwerk',
+    about_value1_text: 'Elk detail met liefde en zorg vervaardigd',
+    about_value2_title: 'Verse Ingrediënten',
+    about_value2_text: 'Alleen de beste, puurste grondstoffen',
+    about_value3_title: 'Uw keuze',
+    about_value3_text: 'Op aanvraag voor al uw dieetwensen',
+    about_year_label: 'Jaar van oprichting',
+
+    // TESTIMONIALS
+    testimonials_tag: 'Klantbeoordelingen',
+    testimonials_title_pre: 'Wat onze ',
+    testimonials_title_em: 'klanten',
+    testimonials_title_post: ' zeggen',
+
     // FOOTER
     footer_desc: 'Ambachtelijke luxe taarten gemaakt met liefde en passie. Voor elk bijzonder moment in uw leven.',
     footer_nav_title: 'Navigatie',
@@ -76,14 +98,15 @@ export const translations = {
     footer_nav_order: 'Bestellen',
     footer_nav_contact: 'Contact',
     footer_contact_title: 'Contact',
-    footer_bottom: '© 2024 La Douceur — Alle rechten voorbehouden',
+    footer_bottom: '© 2026 La Douceur — Alle rechten voorbehouden',
   },
 
   ti: {
     // NAVBAR
     nav_taarten: 'ዝተፈላለዩ ኬካታት',
+    nav_about: 'ብዛዕባና',
     nav_bestellen: 'ምእዛዝ',
-    nav_contact: 'ብዛዕባና',
+    nav_contact: 'ርክብ',
     nav_cta: 'ሕጂ ኣዝዝ',
 
     // HERO
@@ -99,9 +122,9 @@ export const translations = {
 
     // STATS
     stat_customers: 'ሕጉሳት ዓማዊል',
-    stat_rating: 'ግምገማ',
     stat_handmade: 'ብኢድ ዝተሰርሐ',
-    stat_certifications: 'ምልክታ ጽሬት',
+    stat_halal_num: 'ምርጫኹም',
+    stat_halal: 'ብዝጠለብክምዎ መሰረት',
 
     // GALLERY
     gallery_tag: 'ስርሓትና',
@@ -149,6 +172,27 @@ export const translations = {
     // PRICES
     price_from: 'ካብ',
 
+    // ABOUT
+    about_tag: 'ዛንታ',
+    about_title_pre: '',
+    about_title_em: 'ብፍቕሪን ሓበናን',
+    about_title_post: ' ዝተሰርሐ',
+    about_text1: 'La Douceur ካብ ዕምቆት ፍቕሪ ናይ ኬካታትን ቶርታትን ስርሓት ዝመጸ እዩ። ዝሰርሖ ነፍሲ ወከፍ ኬክ ፍሉይ ስራሕ እዩ — ካብ ዝበለጸ ረቛሒ ክሳብ ዝደቐቐ ዝርዝር።',
+    about_text2: 'ቁጽሮም ብዙሓት ዝኾኑ ሕጉሳት ዓማዊል ኣለዉኒ። ኣብ ኩሉ ስርሓተይ ጽሬትን ውልቃዊ ኣቓልቦን ማእከልነት ዝገብሮ እዩ።',
+    about_value1_title: 'ብኢድ ዝተሰርሐ',
+    about_value1_text: 'ኩሉ ዝርዝር ብፍቕርን ጥንቃቐን ዝተሰርሐ',
+    about_value2_title: 'ሓደሽቲ ረቛሒታት',
+    about_value2_text: 'ዝበለጹ፡ ጹሩያት ባእታታት',
+    about_value3_title: 'ምርጫኹም',
+    about_value3_text: 'ብዝጠለብክምዎ መሰረት',
+    about_year_label: 'ዝጀመርክሉ ዓመት',
+
+    // TESTIMONIALS
+    testimonials_tag: 'ናይ ዓማዊል ርእይቶ',
+    testimonials_title_pre: 'ዓማዊልና ',
+    testimonials_title_em: 'ዝብልዎ',
+    testimonials_title_post: '',
+
     // FOOTER
     footer_desc: 'ብፍቕርን ሓበናን ዝተሰርሐ ሉኹስ ኬኽ። ንኹሎም ፍሉያት ናይ ህይወትኩም ግዜያት።',
     footer_nav_title: 'ምዝዋር',
@@ -156,6 +200,6 @@ export const translations = {
     footer_nav_order: 'ምእዛዝ',
     footer_nav_contact: 'ርክብ',
     footer_contact_title: 'ርክብ',
-    footer_bottom: '© 2024 La Douceur — ኩሎም መሰላት ተሓዙ',
+    footer_bottom: '© 2026 La Douceur — ኩሎም መሰላት ተሓዙ',
   }
 }

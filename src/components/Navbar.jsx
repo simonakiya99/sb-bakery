@@ -25,6 +25,7 @@ function Navbar() {
         La <span>Douceur</span>
       </div>
       <ul className="nav-links">
+        <li><a onClick={() => scrollTo('verhaal')}>{T.nav_about}</a></li>
         <li><a onClick={() => scrollTo('galerij')}>{T.nav_taarten}</a></li>
         <li><a onClick={() => scrollTo('bestelling')}>{T.nav_bestellen}</a></li>
         <li><a onClick={() => scrollTo('contact')}>{T.nav_contact}</a></li>
@@ -51,6 +52,7 @@ function Navbar() {
       {menuOpen && (
         <div className="mobile-menu">
           <ul>
+            <li><a onClick={() => scrollTo('verhaal')}>{T.nav_about}</a></li>
             <li><a onClick={() => scrollTo('galerij')}>{T.nav_taarten}</a></li>
             <li><a onClick={() => scrollTo('bestelling')}>{T.nav_bestellen}</a></li>
             <li><a onClick={() => scrollTo('contact')}>{T.nav_contact}</a></li>

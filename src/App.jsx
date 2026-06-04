@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 import { LanguageProvider, useLang } from './context/LanguageContext'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
+import About from './components/About'
 import Gallery from './components/Gallery'
 import Order from './components/Order'
 import Footer from './components/Footer'
@@ -31,6 +32,7 @@ function AppContent() {
     <>
       <Navbar />
       <Hero />
+      <About />
       <Gallery />
       <Order />
       <Footer />

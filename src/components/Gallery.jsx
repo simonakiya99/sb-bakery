@@ -195,7 +195,6 @@ function Gallery() {
               <span className="cake-card-tag">{getCategoryTag(cake.category)}</span>
               <h3 className="gallery-card-title">{cake.title[lang]}</h3>
               <p className="gallery-card-desc">{cake.desc[lang]}</p>
-              <span className="cake-card-price">{T.price_from} {cake.price}</span>
             </div>
           </div>
         ))}

@@ -23,10 +23,7 @@ function Footer() {
         <div className="footer-col">
           <h4>{T.footer_contact_title}</h4>
           <ul>
-            <li><a href="#">info@ladouceur.nl</a></li>
-            <li><a href="#">06 XX XX XX XX</a></li>
-            <li><a href="#">Instagram</a></li>
-            <li><a href="#">WhatsApp</a></li>
+            <li><a href="mailto:info@ladouceur.nl">info@ladouceur.nl</a></li>
           </ul>
         </div>
       </footer>
