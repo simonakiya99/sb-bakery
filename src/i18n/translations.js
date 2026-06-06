@@ -76,7 +76,7 @@ export const translations = {
     about_title_pre: 'Gemaakt met ',
     about_title_em: 'liefde',
     about_title_post: ', gebakken met passie',
-    about_text1: 'La Douceur is ontstaan ​​uit een diepe liefde voor het bakken van taarten en gebak. Elke taart die ik maak is een fantastisch kunstwerk – van de fijnste details tot de kleinste details.',
+    about_text1: 'SB is ontstaan uit een diepe liefde voor het bakken van taarten en gebak. Elke taart die ik maak is een fantastisch kunstwerk – van de fijnste details tot de kleinste details.',
     about_text2: 'Ik heb een groot aantal tevreden klanten. Kwaliteit en persoonlijke aandacht staan ​​centraal in al mijn werk.',
     about_value1_title: 'Ambachtelijk Handwerk',
     about_value1_text: 'Elk detail met liefde en zorg vervaardigd',
@@ -111,7 +111,7 @@ export const translations = {
     footer_nav_order: 'Bestellen',
     footer_nav_contact: 'Contact',
     footer_contact_title: 'Contact',
-    footer_bottom: '© 2026 La Douceur — Alle rechten voorbehouden',
+    footer_bottom: '© 2026 SB — Alle rechten voorbehouden',
   },
 
   ti: {
@@ -191,7 +191,7 @@ export const translations = {
     about_title_pre: '',
     about_title_em: 'ብፍቕሪን ሓበናን',
     about_title_post: ' ዝተሰርሐ',
-    about_text1: 'La Douceur ካብ ዕምቆት ፍቕሪ ናይ ኬካታትን ቶርታትን ስርሓት ዝመጸ እዩ። ዝሰርሖ ነፍሲ ወከፍ ኬክ ፍሉይ ስራሕ እዩ — ካብ ዝበለጸ ረቛሒ ክሳብ ዝደቐቐ ዝርዝር።',
+    about_text1: 'SB ካብ ዕምቆት ፍቕሪ ናይ ኬካታትን ቶርታትን ስርሓት ዝመጸ እዩ። ዝሰርሖ ነፍሲ ወከፍ ኬክ ፍሉይ ስራሕ እዩ — ካብ ዝበለጸ ረቛሒ ክሳብ ዝደቐቐ ዝርዝር።',
     about_text2: 'ቁጽሮም ብዙሓት ዝኾኑ ሕጉሳት ዓማዊል ኣለዉኒ። ኣብ ኩሉ ስርሓተይ ጽሬትን ውልቃዊ ኣቓልቦን ማእከልነት ዝገብሮ እዩ።',
     about_value1_title: 'ብኢድ ዝተሰርሐ',
     about_value1_text: 'ኩሉ ዝርዝር ብፍቕርን ጥንቃቐን ዝተሰርሐ',
@@ -226,6 +226,6 @@ export const translations = {
     footer_nav_order: 'ምእዛዝ',
     footer_nav_contact: 'ርክብ',
     footer_contact_title: 'ርክብ',
-    footer_bottom: '© 2026 La Douceur — ኩሎም መሰላት ተሓዙ',
+    footer_bottom: '© 2026 SB — ኩሎም መሰላት ተሓዙ',
   }
 }

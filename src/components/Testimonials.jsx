@@ -16,12 +16,12 @@ const testimonials = [
   },
   {
     nl: {
-      text: 'Voor mijn dochters verjaardag bestelde ik een verrassingstaart. Ze was compleet sprakeloos van blijdschap. Dank je, La Douceur!',
+      text: 'Voor mijn dochters verjaardag bestelde ik een verrassingstaart. Ze was compleet sprakeloos van blijdschap. Dank je, SB!',
       name: 'Lisa van den Berg',
       occasion: 'Verjaardagsfeest, Amsterdam',
     },
     ti: {
-      text: 'ን ልደት ጓለይ ናይ ደስታ ኬክ ኣዚዘ። ካብ ሓጎስ ዘረባ ሲኢና! የቐንየልኪ La Douceur.',
+      text: 'ን ልደት ጓለይ ናይ ደስታ ኬክ ኣዚዘ። ካብ ሓጎስ ዘረባ ሲኢና! የቐንየልኪ SB.',
       name: 'ሊሳ ቫን ደን ቤርጅ',
       occasion: 'ናይ ልደት ፌስታ, ኣምስተርዳም',
     },
