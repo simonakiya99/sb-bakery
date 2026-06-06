@@ -1,0 +1,55 @@
+---
+import { translations } from '../i18n/translations.js'
+const { lang } = Astro.props
+const T = translations[lang]
+---
+<section class="about-section" id="verhaal">
+  <div class="about-layout">
+    <div class="about-image-col">
+      <div class="about-img-frame">
+        <img
+          src="https://images.unsplash.com/photo-1542826438-bd32f43d626f?w=800&q=85"
+          alt="La Douceur atelier"
+          class="about-img"
+          loading="lazy"
+        />
+        <div class="about-year-badge">
+          <span class="about-year-num">2018</span>
+          <span class="about-year-label">{T.about_year_label}</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="about-content">
+      <span class="section-tag">{T.about_tag}</span>
+      <h2 class="section-title">
+        {T.about_title_pre}<em>{T.about_title_em}</em>{T.about_title_post}
+      </h2>
+      <p class="about-text">{T.about_text1}</p>
+      <p class="about-text">{T.about_text2}</p>
+      <div class="about-values">
+        <div class="about-value">
+          <div class="about-value-icon">✦</div>
+          <div class="about-value-body">
+            <strong>{T.about_value1_title}</strong>
+            <span>{T.about_value1_text}</span>
+          </div>
+        </div>
+        <div class="about-value">
+          <div class="about-value-icon">✦</div>
+          <div class="about-value-body">
+            <strong>{T.about_value2_title}</strong>
+            <span>{T.about_value2_text}</span>
+          </div>
+        </div>
+        <div class="about-value">
+          <div class="about-value-icon">✦</div>
+          <div class="about-value-body">
+            <strong>{T.about_value3_title}</strong>
+            <span>{T.about_value3_text}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

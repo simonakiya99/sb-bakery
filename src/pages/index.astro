@@ -1,0 +1,26 @@
+---
+import Layout from '../layouts/Layout.astro'
+import Navbar from '../components/Navbar.astro'
+import Hero from '../components/Hero.astro'
+import About from '../components/About.astro'
+import GalleryIsland from '../components/Gallery.jsx'
+import Courses from '../components/Courses.astro'
+import OrderIsland from '../components/Order.jsx'
+import Footer from '../components/Footer.astro'
+import '../index.css'
+
+const lang = 'nl'
+---
+<Layout
+  lang={lang}
+  title="La Douceur — Ambachtelijke Taarten"
+  description="Handgemaakte luxe taarten voor uw meest bijzondere momenten. Bruidstaarten, verjaardagstaarten en meer. Halal en glutenvrij op aanvraag."
+>
+  <Navbar lang={lang} />
+  <Hero lang={lang} />
+  <About lang={lang} />
+  <GalleryIsland lang={lang} client:load />
+  <Courses lang={lang} />
+  <OrderIsland lang={lang} client:load />
+  <Footer lang={lang} />
+</Layout>

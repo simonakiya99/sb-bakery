@@ -3,6 +3,7 @@ export const translations = {
     // NAVBAR
     nav_taarten: 'Taarten',
     nav_about: 'Over ons',
+    nav_cursussen: 'Cursussen',
     nav_bestellen: 'Bestellen',
     nav_contact: 'Contact',
     nav_cta: 'Bestel nu',
@@ -91,6 +92,18 @@ export const translations = {
     testimonials_title_em: 'klanten',
     testimonials_title_post: ' zeggen',
 
+    // CURSUSSEN
+    courses_tag: 'Leer van de beste',
+    courses_title_pre: 'Ontdek onze ',
+    courses_title_em: 'cursussen',
+    courses_subtitle: 'Leer de kunst van het taartmaken — van beginner tot gevorderd, fysiek of online.',
+    courses_type_physical: 'Fysiek',
+    courses_type_online: 'Online',
+    courses_duration_label: 'Duur',
+    courses_price_label: 'Prijs',
+    courses_btn: 'Inschrijven',
+    courses_note: '* Exacte data en locaties worden besproken bij aanmelding.',
+
     // FOOTER
     footer_desc: 'Ambachtelijke luxe taarten gemaakt met liefde en passie. Voor elk bijzonder moment in uw leven.',
     footer_nav_title: 'Navigatie',
@@ -105,6 +118,7 @@ export const translations = {
     // NAVBAR
     nav_taarten: 'ዝተፈላለዩ ኬካታት',
     nav_about: 'ብዛዕባና',
+    nav_cursussen: 'ኮርሳት',
     nav_bestellen: 'ምእዛዝ',
     nav_contact: 'ርክብ',
     nav_cta: 'ሕጂ ኣዝዝ',
@@ -192,6 +206,18 @@ export const translations = {
     testimonials_title_pre: 'ዓማዊልና ',
     testimonials_title_em: 'ዝብልዎ',
     testimonials_title_post: '',
+
+    // CURSUSSEN
+    courses_tag: 'ካብ ዝበለጸ ተማሃሩ',
+    courses_title_pre: 'ናይ ኬክ ',
+    courses_title_em: 'ኮርሳትና',
+    courses_subtitle: 'ናይ ኬክ ስነጥበብ ተማሃሩ — ካብ ጀማሪ ክሳብ ሕሙም፡ ኣካላዊ ወይ ኦንላይን።',
+    courses_type_physical: 'ኣካላዊ',
+    courses_type_online: 'ኦንላይን',
+    courses_duration_label: 'ግዜ',
+    courses_price_label: 'ዋጋ',
+    courses_btn: 'ምምዝጋብ',
+    courses_note: '* ናይ ዝርዝር ሓበሬታ ኣብ ምምዝጋብ ግዜ ይዝረበሉ።',
 
     // FOOTER
     footer_desc: 'ብፍቕርን ሓበናን ዝተሰርሐ ሉኹስ ኬኽ። ንኹሎም ፍሉያት ናይ ህይወትኩም ግዜያት።',

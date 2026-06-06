@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import { useLang } from '../context/LanguageContext'
 import { translations } from '../i18n/translations'
 
 const cakes = [
@@ -104,10 +103,9 @@ const cakes = [
   }
 ]
 
-function Gallery() {
+function Gallery({ lang }) {
   const [active, setActive] = useState('alle')
   const [hoveredId, setHoveredId] = useState(null)
-  const { lang } = useLang()
   const T = translations[lang]
 
   const filters = [
@@ -138,7 +136,7 @@ function Gallery() {
   }
 
   return (
-    <section className="gallery-section" id="galerij" data-animate>
+    <section className="gallery-section gallery-section--visible" id="galerij">
       <div className="section-header">
         <span className="section-tag">{T.gallery_tag}</span>
         <h2 className="section-title">{T.gallery_title_pre}<em>{T.gallery_title_em}</em></h2>
@@ -167,9 +165,10 @@ function Gallery() {
           >
             <div className="gallery-img-wrap">
               <img
-                src={cake.img}
+                src={`/gallery/gallery-${cake.id}.jpg`}
                 alt={cake.title[lang]}
                 loading="lazy"
+                onError={(e) => { e.currentTarget.src = cake.img }}
                 style={{
                   transform: hoveredId === cake.id ? 'scale(1.08)' : 'scale(1)',
                   transition: 'transform 0.6s ease'

@@ -1,0 +1,78 @@
+---
+import { translations } from '../i18n/translations.js'
+const { lang } = Astro.props
+const T = translations[lang]
+
+const courses = [
+  {
+    id: 1,
+    online: false,
+    title: { nl: 'Beginnerscursus Taartdecoratie', ti: 'ናይ ጀማሪ ናይ ኬክ ዕጠቃ ኮርስ' },
+    desc: {
+      nl: 'Leer de basisprincipes van taartdecoratie: fondant werken, glazuur spuiten en eenvoudige bloemen maken. Geen voorkennis vereist — iedereen is welkom.',
+      ti: 'ናይ ኬክ ዕጠቃ መሰረታዊ ፍልጠት ተማሃሩ፦ ፎንዳን፡ ናይ ክሬም ምስዓት፡ ቀለሞምን ዕምባባን። ናይ ቅድሚ ፍልጠት ኣየድልን።',
+    },
+    duration: { nl: '3 uur', ti: '3 ሰዓት' },
+    price: '€45',
+    img: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&q=80',
+  },
+  {
+    id: 2,
+    online: false,
+    title: { nl: 'Bruidstaarten Masterclass', ti: 'ናይ መርዓ ኬካታት ማስተርክላስ' },
+    desc: {
+      nl: 'Maak uw eigen professionele bruidstaart van begin tot eind. U leert stapelen, bedekken met fondant en decoreren met suikerbloemen en gouden accenten.',
+      ti: 'ካብ ጅምር ክሳብ መወዳእታ ናይ ሙያ ናይ መርዓ ኬክ ስርሑ። ምድርዳር፡ ፎንዳን ምልባስ፡ ናይ ሽኮር ዕምባባን ናይ ወርቂ ዕጠቃን ትምሃሩ።',
+    },
+    duration: { nl: '1 dag (6 uur)', ti: '1 መዓልቲ (6 ሰዓት)' },
+    price: '€95',
+    img: 'https://images.unsplash.com/photo-1535254973040-607b474cb50d?w=600&q=80',
+  },
+  {
+    id: 3,
+    online: true,
+    title: { nl: 'Online Videocursus', ti: 'ናይ ኦንላይን ቪድዮ ኮርስ' },
+    desc: {
+      nl: 'Volg de cursus vanuit huis, op uw eigen tempo. Videolessen over decoratietechnieken, smakencombinaties en professionele presentatie voor alle niveaus.',
+      ti: 'ካብ ገዛ፡ ብናትኩም ፍጥነት ተኸታተሉ። ብዛዕባ ናይ ዕጠቃ ቴክኒካት፡ ናይ ጣዕሚ ምቁራን፡ ናይ ሙያ ምቕራብ ናይ ቪድዮ ትምህርቲ ንኩሉ ደረጃ።',
+    },
+    duration: { nl: 'Op eigen tempo', ti: 'ብናትኩም ፍጥነት' },
+    price: '€35',
+    img: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&q=80',
+  },
+]
+---
+<section class="courses-section" id="cursussen">
+  <div class="section-header">
+    <span class="section-tag">{T.courses_tag}</span>
+    <h2 class="section-title">
+      {T.courses_title_pre}<em>{T.courses_title_em}</em>
+    </h2>
+    <p class="courses-subtitle">{T.courses_subtitle}</p>
+    <div class="divider"></div>
+  </div>
+
+  <div class="courses-grid">
+    {courses.map(course => (
+      <div class="course-card">
+        <div class="course-img-wrap">
+          <img src={course.img} alt={course.title[lang]} loading="lazy" />
+          <span class={`course-type-badge${course.online ? ' online' : ''}`}>
+            {course.online ? T.courses_type_online : T.courses_type_physical}
+          </span>
+        </div>
+        <div class="course-body">
+          <h3 class="course-title">{course.title[lang]}</h3>
+          <p class="course-desc">{course.desc[lang]}</p>
+          <div class="course-meta">
+            <span class="course-duration">⏱ {course.duration[lang]}</span>
+            <span class="course-price">{course.price} <small>p.p.</small></span>
+          </div>
+          <a href="#bestelling" class="btn-course">{T.courses_btn}</a>
+        </div>
+      </div>
+    ))}
+  </div>
+
+  <p class="courses-note">{T.courses_note}</p>
+</section>
