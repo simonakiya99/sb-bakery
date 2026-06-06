@@ -17,22 +17,31 @@ if (supabaseUrl && supabaseAnonKey) {
 	// Create a minimal mock API with common methods used by the app.
 	console.warn('Supabase env vars missing: VITE_SUPABASE_URL / VITE_SUPABASE_ANON_KEY')
 	const noopResult = () => Promise.resolve({ data: null, error: null })
-	const chainable = () => ({ then: () => Promise.resolve({ data: null, error: null }) })
 
-	const mockFrom = () => ({
-		select: noopResult,
-		insert: noopResult,
-		update: noopResult,
-		delete: noopResult,
-		eq: () => ({ select: noopResult }),
-		range: () => ({ select: noopResult }),
-		order: () => ({ select: noopResult }),
-		limit: () => ({ select: noopResult }),
-		or: () => ({ select: noopResult }),
-	})
+	const createMockQuery = () => {
+		const query = {
+			select: () => query,
+			insert: () => query,
+			update: () => query,
+			delete: () => query,
+			eq: () => query,
+			range: () => query,
+			order: () => query,
+			limit: () => query,
+			or: () => query,
+			then: (onFulfilled, onRejected) => {
+				return Promise.resolve({ data: null, error: null }).then(onFulfilled, onRejected)
+			},
+			catch: (onRejected) => {
+				return Promise.resolve({ data: null, error: null }).catch(onRejected)
+			},
+		}
+
+		return query
+	}
 
 	supabase = {
-		from: mockFrom,
+		from: createMockQuery,
 		auth: {
 			signIn: noopResult,
 			signUp: noopResult,
