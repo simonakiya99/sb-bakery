@@ -449,6 +449,32 @@ body {
   transform: translateY(-2px);
 }
 
+.about-gallery-btn {
+  margin: 24px 0 0;
+  background: var(--gold);
+  color: #fff;
+  border-color: var(--gold);
+}
+
+.about-gallery-btn:hover {
+  background: #b8914d;
+  border-color: #b8914d;
+}
+
+.gallery-section.hidden-by-default {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  visibility: hidden;
+  transition: opacity 0.5s ease, max-height 0.5s ease;
+}
+
+.gallery-section.visible {
+  opacity: 1;
+  max-height: 9999px;
+  visibility: visible;
+}
+
 .hero-img-badge {
   position: absolute;
   bottom: 2.5rem;

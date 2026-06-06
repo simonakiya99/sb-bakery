@@ -27,6 +27,7 @@ const T = translations[lang]
       </h2>
       <p class="about-text">{T.about_text1}</p>
       <p class="about-text">{T.about_text2}</p>
+      <button type="button" id="show-work-gallery" class="btn-secondary about-gallery-btn">{T.about_btn_gallery}</button>
       <div class="about-values">
         <div class="about-value">
           <div class="about-value-icon">✦</div>
@@ -53,3 +54,18 @@ const T = translations[lang]
     </div>
   </div>
 </section>
+
+<script type="module">
+  window.addEventListener('DOMContentLoaded', () => {
+    const button = document.getElementById('show-work-gallery')
+    const gallery = document.getElementById('galerij')
+
+    if (!button || !gallery) return
+
+    button.addEventListener('click', () => {
+      gallery.classList.remove('hidden-by-default')
+      gallery.classList.add('visible')
+      gallery.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    })
+  })
+</script>
