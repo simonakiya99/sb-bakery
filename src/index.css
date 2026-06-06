@@ -3,6 +3,8 @@
   --gold: #c9a96e;
   --gold-dark: #b8914d;
   --gold-light: rgba(201, 169, 110, 0.12);
+  --brand-font: 'Playfair Display', Georgia, serif;
+  --brand-sans: 'Montserrat', 'Helvetica Neue', sans-serif;
   --bg: #faf8f5;
   --bg-white: #ffffff;
   --bg-warm: #f5efe8;
@@ -82,10 +84,10 @@ body {
 }
 
 .nav-logo {
-  font-family: 'Playfair Display', Georgia, serif;
+  font-family: var(--brand-font);
   font-size: 22px;
-  font-weight: 400;
-  letter-spacing: 0.05em;
+  font-weight: 600;
+  letter-spacing: 0.04em;
   color: #1a1a1a;
 }
 
@@ -101,11 +103,14 @@ body {
   display: inline-block;
 }
 .nav-logo-text {
-  font-family: 'Playfair Display', Georgia, serif;
-  font-size: 22px;
-  font-weight: 400;
-  color: inherit;
+  font-family: var(--brand-font);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--gold);
+  margin-left: 6px;
   vertical-align: middle;
+  display: inline-block;
+  letter-spacing: 0.06em;
 }
 .navbar:not(.scrolled) .nav-logo-text { color: #fff; }
 
@@ -368,13 +373,13 @@ body {
 }
 
 .hero-title {
-  font-family: 'Playfair Display', Georgia, serif;
+  font-family: var(--brand-font);
   font-size: 64px;
-  font-weight: 400;
-  line-height: 1.1;
+  font-weight: 600;
+  line-height: 1.05;
   color: #ffffff;
-  margin-bottom: 1.5rem;
-  text-shadow: 0 2px 24px rgba(0, 0, 0, 0.5);
+  margin-bottom: 1.25rem;
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.45);
 }
 
 .hero-title em {
@@ -383,13 +388,13 @@ body {
 }
 
 .hero-subtitle {
-  font-size: 15px;
-  color: rgba(255, 255, 255, 0.82);
-  line-height: 1.8;
-  margin-bottom: 2.5rem;
-  max-width: 420px;
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.92);
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  max-width: 56ch;
   font-weight: 300;
-  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.4);
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.36);
 }
 
 .hero-buttons {
@@ -1000,6 +1005,7 @@ footer {
   .hero-title { font-size: 32px; line-height: 1.05; }
   .hero-subtitle { font-size: 14px; }
   .hero-logo { height: 88px; }
+  .hero-buttons { display: flex; flex-direction: column; gap: 0.75rem; }
   .gallery-grid { grid-template-columns: 1fr; gap: 0.75rem; }
   .footer { padding: 3rem 1rem; grid-template-columns: 1fr; }
 }
