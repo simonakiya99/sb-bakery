@@ -165,7 +165,7 @@ function Gallery({ lang }) {
           >
             <div className="gallery-img-wrap">
               <img
-                src={`/gallery/gallery-${cake.id}.jpg`}
+                src={`/gallery/gallery-${cake.id}.png`}
                 alt={cake.title[lang]}
                 loading="lazy"
                 onError={(e) => { e.currentTarget.src = cake.img }}
