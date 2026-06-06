@@ -3,6 +3,7 @@ import Layout from '../../layouts/Layout.astro'
 import Navbar from '../../components/Navbar.astro'
 import Hero from '../../components/Hero.astro'
 import About from '../../components/About.astro'
+import WorkGallery from '../../components/WorkGallery.astro'
 import GalleryIsland from '../../components/Gallery.jsx'
 import Courses from '../../components/Courses.astro'
 import OrderIsland from '../../components/Order.jsx'
@@ -19,6 +20,7 @@ const lang = 'ti'
   <Navbar lang={lang} />
   <Hero lang={lang} />
   <About lang={lang} />
+  <WorkGallery />
   <GalleryIsland lang={lang} client:load />
   <Courses lang={lang} />
   <OrderIsland lang={lang} client:load />

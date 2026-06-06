@@ -27,7 +27,13 @@ const T = translations[lang]
       </h2>
       <p class="about-text">{T.about_text1}</p>
       <p class="about-text">{T.about_text2}</p>
-      <button type="button" id="show-work-gallery" class="btn-secondary about-gallery-btn">{T.about_btn_gallery}</button>
+      <button
+        type="button"
+        id="show-work-gallery"
+        class="btn-secondary about-gallery-btn"
+        data-open={T.about_btn_gallery}
+        data-close={T.about_btn_gallery_close}
+      >{T.about_btn_gallery}</button>
       <div class="about-values">
         <div class="about-value">
           <div class="about-value-icon">✦</div>
@@ -58,14 +64,22 @@ const T = translations[lang]
 <script type="module">
   window.addEventListener('DOMContentLoaded', () => {
     const button = document.getElementById('show-work-gallery')
-    const gallery = document.getElementById('galerij')
+    const gallery = document.getElementById('handwerk')
 
     if (!button || !gallery) return
 
     button.addEventListener('click', () => {
-      gallery.classList.remove('hidden-by-default')
-      gallery.classList.add('visible')
-      gallery.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      const isHidden = gallery.classList.contains('hidden-by-default')
+
+      if (isHidden) {
+        gallery.classList.remove('hidden-by-default')
+        button.textContent = button.dataset.close
+        gallery.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      } else {
+        gallery.classList.add('hidden-by-default')
+        button.textContent = button.dataset.open
+        button.scrollIntoView({ behavior: 'smooth', block: 'center' })
+      }
     })
   })
 </script>

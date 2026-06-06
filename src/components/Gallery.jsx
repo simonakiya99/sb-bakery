@@ -91,6 +91,62 @@ const cakes = [
       ti: 'እንቋዕ እዋን ኬክ ብሮዝን ፐርልን ዘውትር ኣገልግሎት።'
     },
     img: 'https://images.unsplash.com/photo-1488477181946-6428a0291777?w=600&q=80'
+  },
+  {
+    id: 10,
+    title: { nl: 'Handgemaakte Creatie', ti: 'ብኢድ ዝተሰርሐ ኬክ' },
+    category: 'speciaal',
+    desc: { nl: 'Unieke handgemaakte taart op maat.', ti: 'ፍሉይ ብኢድ ዝተሰርሐ ኬክ።' },
+    img: 'https://images.unsplash.com/photo-1535254973040-607b474cb50d?w=600&q=80'
+  },
+  {
+    id: 11,
+    title: { nl: 'Elegante Bruidstaart', ti: 'ጸጋዕ ናይ መርዓ ኬክ' },
+    category: 'bruiloft',
+    desc: { nl: 'Stijlvolle bruidstaart met verfijnde afwerking.', ti: 'ጸጋዕ ናይ መርዓ ኬክ ብዝጥዕም ኣሰራርሓ።' },
+    img: 'https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=600&q=80'
+  },
+  {
+    id: 12,
+    title: { nl: 'Feestelijke Verjaardagstaart', ti: 'ናይ ምኽባር ልደት ኬክ' },
+    category: 'verjaardag',
+    desc: { nl: 'Vrolijke verjaardagstaart voor een onvergetelijk feest.', ti: 'ሕጉስ ናይ ልደት ኬክ ንዘይምርሳዕ ፌስታ።' },
+    img: 'https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?w=600&q=80'
+  },
+  {
+    id: 13,
+    title: { nl: 'Luxe Taartcreatie', ti: 'ሉኹስ ናይ ኬክ ስርሐ' },
+    category: 'speciaal',
+    desc: { nl: 'Luxueuze taart met gouden details en premium afwerking.', ti: 'ሉኹስ ኬክ ምስ ናይ ወርቂ ዝርዝርን ፍሉይ ኣሰራርሓን።' },
+    img: 'https://images.unsplash.com/photo-1558636508-e0db3814bd1d?w=600&q=80'
+  },
+  {
+    id: 14,
+    title: { nl: 'Romantische Taart', ti: 'ሮማንቲካዊ ኬክ' },
+    category: 'bruiloft',
+    desc: { nl: 'Romantische taart perfect voor speciale gelegenheden.', ti: 'ሮማንቲካዊ ኬክ ንፍሉያት ናይ ህይወት ግዜያት።' },
+    img: 'https://images.unsplash.com/photo-1606890737304-57a1ca8a5b62?w=600&q=80'
+  },
+  {
+    id: 15,
+    title: { nl: 'Bijzondere Gelegenheidstaart', ti: 'ፍሉይ ኣጋጣሚ ኬክ' },
+    category: 'speciaal',
+    desc: { nl: 'Prachtige taart voor uw meest bijzondere moment.', ti: 'ጽቡቕ ኬክ ንዝዓቢ ፍሉይ ግዜኹም።' },
+    img: 'https://images.unsplash.com/photo-1562777717-dc6984f65a63?w=600&q=80'
+  },
+  {
+    id: 16,
+    title: { nl: 'Klassieke Verjaardagstaart', ti: 'ክላሲካዊ ናይ ልደት ኬክ' },
+    category: 'verjaardag',
+    desc: { nl: 'Tijdloze verjaardagstaart met een persoonlijk tintje.', ti: 'ዘይምርሳዕ ናይ ልደት ኬክ ምስ ውልቃዊ ሕብሪ።' },
+    img: 'https://images.unsplash.com/photo-1519869325930-281384150729?w=600&q=80'
+  },
+  {
+    id: 17,
+    title: { nl: 'Creatieve Maatwerktaart', ti: 'ፍጡር ናይ ምርጫ ኬክ' },
+    category: 'speciaal',
+    desc: { nl: 'Volledig op maat gemaakte taart naar uw wensen.', ti: 'ምሉእ ብምሉእ ብመሰረት ድሌትኩም ዝተሰርሐ ኬክ።' },
+    img: 'https://images.unsplash.com/photo-1571115177098-24ec42ed204d?w=600&q=80'
   }
 ]
 
@@ -127,7 +183,7 @@ function Gallery({ lang }) {
   }
 
   return (
-    <section className="gallery-section hidden-by-default" id="galerij">
+    <section className="gallery-section" id="galerij">
       <div className="section-header">
         <span className="section-tag">{T.gallery_tag}</span>
         <h2 className="section-title">{T.gallery_title_pre}<em>{T.gallery_title_em}</em></h2>
