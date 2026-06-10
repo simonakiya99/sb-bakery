@@ -100,6 +100,35 @@
       position: relative;
       overflow: hidden;
       box-shadow: 0 8px 48px rgba(0,0,0,0.18);
+      flex-shrink: 0;
+    }
+
+    .cert-scroll-wrap {
+      width: 100%;
+      overflow-x: auto;
+      display: flex;
+      justify-content: center;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .mobile-notice {
+      display: none;
+      background: #fff8e7;
+      border: 1px solid #C9A84C;
+      border-radius: 8px;
+      padding: 0.75rem 1rem;
+      font-size: 0.82rem;
+      color: #7a6030;
+      margin-bottom: 1rem;
+      width: 100%;
+      max-width: 860px;
+      text-align: center;
+    }
+
+    @media (max-width: 1200px) {
+      .mobile-notice { display: block; }
+      .controls { flex-direction: column; }
+      .control-group { min-width: unset; width: 100%; }
     }
 
     /* Subtle texture overlay */
@@ -279,6 +308,9 @@
     <button class="btn-download" id="download-btn">⬇ Download PDF</button>
   </div>
 
+  <p class="mobile-notice">📱 Best viewed on a desktop or laptop — scroll right to see the full certificate.</p>
+
+  <div class="cert-scroll-wrap">
   <div id="certificaat">
     <div class="cert-border-outer"></div>
     <div class="cert-border-inner"></div>
@@ -318,6 +350,7 @@
         </div>
       </div>
     </div>
+  </div>
   </div>
 
   <script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>

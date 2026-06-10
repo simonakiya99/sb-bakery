@@ -29,6 +29,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
@@ -37,6 +38,7 @@ body {
   color: #1a1a1a;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
 
 /* ===== SCROLL ANIMATIONS ===== */
@@ -574,6 +576,9 @@ body {
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.4);
   font-weight: 500;
+  text-align: center;
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 /* ===== WORK GALLERY (handwerk in Over ons) ===== */
@@ -994,6 +999,8 @@ footer {
 /* Footer logo image */
 .footer-logo-img {
   height: 64px;
+  width: auto;
+  max-width: 120px;
   margin-right: 12px;
   vertical-align: middle;
   display: inline-block;
@@ -1534,7 +1541,15 @@ body.lang-ti .footer-logo {
     gap: 0.25rem;
   }
   .stat-number { font-size: 20px; }
-  .stat-label { font-size: 8px; letter-spacing: 0.08em; }
+  .stat-label {
+    font-size: 8px;
+    letter-spacing: 0.05em;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
 
   /* Sections padding */
   .gallery-section { padding: 3.5rem 1.25rem; }
@@ -1567,9 +1582,52 @@ body.lang-ti .footer-logo {
   .form-grid { grid-template-columns: 1fr; }
   .order-info h2 { font-size: 28px; }
 
+  /* Work gallery (About toggle) */
+  .work-gallery { padding: 0 1.25rem 3rem; }
+  .work-gallery-grid { grid-template-columns: repeat(2, 1fr); }
+
   /* Footer */
   footer { grid-template-columns: 1fr; padding: 3rem 1.25rem; gap: 2rem; }
+  .footer-logo-img { height: 48px; }
+  .footer-bottom { padding: 1rem 1.25rem; font-size: 11px; }
 
   /* Typography */
   .section-title { font-size: 28px; }
+
+  /* Navbar logo text */
+  .nav-logo-text { font-size: 18px; }
+}
+
+/* ===== RESPONSIVE — SMALL MOBILE (<=480px) ===== */
+@media (max-width: 480px) {
+  /* Hero */
+  .hero-title { font-size: 28px; }
+  .hero-logo { height: 64px; }
+  .btn-primary, .btn-secondary { padding: 13px 22px; font-size: 10px; }
+
+  /* Stats — single column on small screens */
+  .stats-bar { grid-template-columns: 1fr; gap: 1.25rem; padding: 2rem 1.5rem; }
+  .stat-label {
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    -webkit-line-clamp: unset;
+    line-clamp: unset;
+    overflow: visible;
+    display: block;
+  }
+
+  /* Work gallery — single column */
+  .work-gallery-grid { grid-template-columns: 1fr; }
+
+  /* About */
+  .about-values { gap: 1rem; }
+
+  /* Gallery filter buttons */
+  .filter-btn { padding: 7px 10px; font-size: 8px; }
+
+  /* Order form */
+  .order-form { padding: 1.25rem 1rem; }
+
+  /* Courses */
+  .course-card { padding: 0; }
 }
