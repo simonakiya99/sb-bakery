@@ -1307,12 +1307,22 @@ footer {
 .about-img-frame::before {
   content: '';
   position: absolute;
-  top: -18px;
-  left: -18px;
-  right: 36px;
-  bottom: 36px;
+  top: -14px;
+  left: -14px;
+  right: 14px;
+  bottom: -14px;
   border: 1px solid var(--gold);
   z-index: 0;
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+.about-img-frame::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent 60%, rgba(0,0,0,0.18));
+  z-index: 2;
   pointer-events: none;
 }
 
@@ -1320,38 +1330,11 @@ footer {
   width: 100%;
   aspect-ratio: 3 / 4;
   object-fit: cover;
+  object-position: center center;
   display: block;
   position: relative;
   z-index: 1;
-}
-
-.about-year-badge {
-  position: absolute;
-  bottom: -1.75rem;
-  right: -1.75rem;
-  background: var(--bg-dark);
-  padding: 20px 26px;
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-  z-index: 2;
-  border-left: 2px solid var(--gold);
-}
-
-.about-year-num {
-  font-family: 'Playfair Display', Georgia, serif;
-  font-size: 28px;
-  color: var(--gold);
-  line-height: 1;
-  font-weight: 400;
-}
-
-.about-year-label {
-  font-size: 9px;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.45);
-  font-weight: 500;
+  filter: brightness(0.97) contrast(1.04) saturate(1.05);
 }
 
 .about-content {
@@ -1568,7 +1551,7 @@ body.lang-ti .footer-logo {
   /* About */
   .about-layout { grid-template-columns: 1fr; gap: 2.5rem; }
   .about-img-frame::before { display: none; }
-  .about-year-badge { right: 0; bottom: -1rem; }
+  .about-img-frame::after { display: none; }
   .about-img { aspect-ratio: 4 / 3; }
 
   /* Courses */
