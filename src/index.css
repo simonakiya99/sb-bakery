@@ -1574,9 +1574,16 @@ body.lang-ti .footer-logo {
   .order-section { padding: 3.5rem 1.25rem; }
 
   /* Gallery */
-  .gallery-grid { grid-template-columns: 1fr; }
+  .gallery-grid { grid-template-columns: repeat(2, 1fr); gap: 0.75rem; }
   .filter-buttons { gap: 0.4rem; }
   .filter-btn { padding: 8px 14px; font-size: 9px; }
+  .gallery-card-body { padding: 0.75rem 0.875rem 1rem; }
+  .gallery-card-title { font-size: 13px; }
+  .gallery-card-desc { display: none; }
+  #bestelling { scroll-margin-top: 72px; }
+  #galerij { scroll-margin-top: 72px; }
+  #cursussen { scroll-margin-top: 72px; }
+  #contact { scroll-margin-top: 72px; }
 
   /* About */
   .about-layout { grid-template-columns: 1fr; gap: 2.5rem; }

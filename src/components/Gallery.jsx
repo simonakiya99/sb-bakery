@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { translations } from '../i18n/translations'
 
 const cakes = [
@@ -155,6 +155,17 @@ function Gallery({ lang }) {
   const [hoveredId, setHoveredId] = useState(null)
   const T = translations[lang]
 
+  useEffect(() => {
+    const reset = () => setHoveredId(null)
+    document.addEventListener('touchstart', reset, { passive: true })
+    return () => document.removeEventListener('touchstart', reset)
+  }, [])
+
+  const handleCardTouch = (e, cakeId) => {
+    e.stopPropagation()
+    setHoveredId(cakeId)
+  }
+
   const filters = [
     { key: 'alle', label: T.filter_all },
     { key: 'bruiloft', label: T.filter_wedding },
@@ -209,6 +220,7 @@ function Gallery({ lang }) {
             className="gallery-card"
             onMouseEnter={() => setHoveredId(cake.id)}
             onMouseLeave={() => setHoveredId(null)}
+            onTouchStart={(e) => handleCardTouch(e, cake.id)}
           >
             <div className="gallery-img-wrap">
               <img
