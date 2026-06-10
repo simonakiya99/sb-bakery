@@ -1,0 +1,81 @@
+---
+import { translations } from '../i18n/translations.js'
+const { lang } = Astro.props
+const T = translations[lang]
+---
+<section class="about-section" id="verhaal">
+  <div class="about-layout">
+    <div class="about-image-col">
+      <div class="about-img-frame">
+        <img
+          src="https://images.unsplash.com/photo-1558636508-e0db3814bd1d?w=900&q=92"
+          alt="SB atelier"
+          class="about-img"
+          loading="lazy"
+        />
+      </div>
+    </div>
+
+    <div class="about-content">
+      <span class="section-tag">{T.about_tag}</span>
+      <h2 class="section-title">
+        {T.about_title_pre}<em>{T.about_title_em}</em>{T.about_title_post}
+      </h2>
+      <p class="about-text">{T.about_text1}</p>
+      <p class="about-text">{T.about_text2}</p>
+      <button
+        type="button"
+        id="show-work-gallery"
+        class="btn-secondary about-gallery-btn"
+        data-open={T.about_btn_gallery}
+        data-close={T.about_btn_gallery_close}
+      >{T.about_btn_gallery}</button>
+      <div class="about-values">
+        <div class="about-value">
+          <div class="about-value-icon">✦</div>
+          <div class="about-value-body">
+            <strong>{T.about_value1_title}</strong>
+            <span>{T.about_value1_text}</span>
+          </div>
+        </div>
+        <div class="about-value">
+          <div class="about-value-icon">✦</div>
+          <div class="about-value-body">
+            <strong>{T.about_value2_title}</strong>
+            <span>{T.about_value2_text}</span>
+          </div>
+        </div>
+        <div class="about-value">
+          <div class="about-value-icon">✦</div>
+          <div class="about-value-body">
+            <strong>{T.about_value3_title}</strong>
+            <span>{T.about_value3_text}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script type="module">
+  window.addEventListener('DOMContentLoaded', () => {
+    const button = document.getElementById('show-work-gallery')
+    const gallery = document.getElementById('handwerk')
+
+    if (!button || !gallery) return
+
+    button.addEventListener('click', () => {
+      const isHidden = gallery.classList.contains('hidden-by-default')
+
+      if (isHidden) {
+        gallery.classList.remove('hidden-by-default')
+        button.textContent = button.dataset.close
+        gallery.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      } else {
+        gallery.classList.add('hidden-by-default')
+        button.textContent = button.dataset.open
+        button.scrollIntoView({ behavior: 'smooth', block: 'center' })
+      }
+    })
+  })
+</script>

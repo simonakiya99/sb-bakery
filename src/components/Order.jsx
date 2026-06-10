@@ -1,29 +1,16 @@
-import { useRef, useState, useEffect } from 'react'
+import { useRef, useState } from 'react'
 import emailjs from '@emailjs/browser'
-import { useLang } from '../context/LanguageContext'
 import { translations } from '../i18n/translations'
-import { supabase } from '../lib/supabase'
 
 const SERVICE_ID = 'service_pweecrd'
 const TEMPLATE_ID = 'template_ohnue0q'
 const PUBLIC_KEY = 'aH2UrdkRJjRtJE-Hr'
 
-function Order() {
+function Order({ lang }) {
   const formRef = useRef()
   const [status, setStatus] = useState(null)
   const [loading, setLoading] = useState(false)
-  const [taarten, setTaarten] = useState([])
-  const { lang } = useLang()
   const T = translations[lang]
-
-  useEffect(() => {
-    supabase
-      .from('taarten')
-      .select('id, naam_nl, naam_ti')
-      .eq('actief', true)
-      .order('volgorde')
-      .then(({ data }) => { if (data) setTaarten(data) })
-  }, [])
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -43,7 +30,7 @@ function Order() {
   }
 
   return (
-    <section className="order-section" id="bestelling" data-animate>
+    <section className="order-section" id="bestelling">
       <div className="order-layout">
         <div className="order-info">
           <h2>{T.order_title_pre}<em>{T.order_title_em}</em></h2>
@@ -93,11 +80,11 @@ function Order() {
               <div className="form-group">
                 <label>{T.label_type}</label>
                 <select name="soort_taart" className="order-select" required>
-                  {taarten.map(t => (
-                    <option key={t.id} value={lang === 'nl' ? t.naam_nl : t.naam_ti}>
-                      {lang === 'nl' ? t.naam_nl : t.naam_ti}
-                    </option>
-                  ))}
+                  <option value="">{T.label_type}</option>
+                  <option value={T.option_wedding}>{T.option_wedding}</option>
+                  <option value={T.option_birthday}>{T.option_birthday}</option>
+                  <option value={T.option_special}>{T.option_special}</option>
+                  <option value={T.option_other}>{T.option_other}</option>
                 </select>
               </div>
               <div className="form-group">

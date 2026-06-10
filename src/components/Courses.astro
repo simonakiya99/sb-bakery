@@ -1,0 +1,81 @@
+---
+import { translations } from '../i18n/translations.js'
+const { lang } = Astro.props
+const T = translations[lang]
+
+const courses = [
+  {
+    id: 1,
+    online: false,
+    title: { nl: 'Fysieke Cursus', ti: 'ብኣካል ኮርስ' },
+    desc: {
+      nl: 'Leer de kunst van taartmaken in een persoonlijke setting. Van fondant werken tot decoreren — stap voor stap begeleid door Selam.',
+      ti: 'ናይ ኬክ ስነጥበብ ብውልቃዊ ምኽሪ ተማሃሩ። ካብ ፎንዳን ክሳብ ዕጠቃ — ስጉምቲ ብስጉምቲ ብሰላም ተምሂርካ።',
+    },
+    duration: { nl: 'Op aanvraag', ti: 'ብሕቶ' },
+    img: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&q=80',
+  },
+  {
+    id: 2,
+    online: true,
+    title: { nl: 'Online Cursus', ti: 'ብኢንተርነት ኮርስ' },
+    desc: {
+      nl: 'Volg de cursus vanuit huis, op uw eigen tempo. Videolessen over decoratietechnieken en smaken voor alle niveaus.',
+      ti: 'ካብ ገዛ፡ ብናትኩም ፍጥነት ተኸታተሉ። ናይ ቪድዮ ትምህርቲ ብዛዕባ ናይ ዕጠቃ ቴክኒካት ንኩሉ ደረጃ።',
+    },
+    duration: { nl: 'Op eigen tempo', ti: 'ብናትኩም ፍጥነት' },
+    img: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&q=80',
+  },
+]
+---
+<section class="courses-section" id="cursussen">
+  <div class="section-header">
+    <span class="section-tag">{T.courses_tag}</span>
+    <h2 class="section-title">
+      {T.courses_title_pre}<em>{T.courses_title_em}</em>
+    </h2>
+    <p class="courses-subtitle">{T.courses_subtitle}</p>
+    <div class="divider"></div>
+  </div>
+
+  <div class="courses-grid">
+    {courses.map(course => (
+      <div class="course-card">
+        <div class="course-img-wrap">
+          <img src={course.img} alt={course.title[lang]} loading="lazy" />
+          <span class={`course-type-badge${course.online ? ' online' : ''}`}>
+            {course.online ? T.courses_type_online : T.courses_type_physical}
+          </span>
+        </div>
+        <div class="course-body">
+          <h3 class="course-title">{course.title[lang]}</h3>
+          <p class="course-desc">{course.desc[lang]}</p>
+          <div class="course-meta">
+            <span class="course-duration">⏱ {course.duration[lang]}</span>
+          </div>
+          <button
+            class="btn-course enroll-btn"
+            data-course={course.title[lang]}
+          >{T.courses_btn}</button>
+        </div>
+      </div>
+    ))}
+  </div>
+
+  <p class="courses-note">{T.courses_note}</p>
+</section>
+
+<script>
+  document.querySelectorAll('.enroll-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const courseName = btn.dataset.course
+
+      const textarea = document.querySelector('.order-textarea')
+      if (textarea) {
+        textarea.value = `Cursus: ${courseName}`
+      }
+
+      document.getElementById('bestelling')?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    })
+  })
+</script>

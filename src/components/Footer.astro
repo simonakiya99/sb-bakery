@@ -1,0 +1,26 @@
+---
+import { translations } from '../i18n/translations.js'
+const { lang } = Astro.props
+const T = translations[lang]
+---
+<footer id="contact">
+  <div class="footer-brand">
+    <img src="/logo.png" alt="SB Bakery logo" class="footer-logo-img" onerror="this.onerror=null; this.src='/sb-monogram.svg'" />
+    <p>{T.footer_desc}</p>
+  </div>
+  <div class="footer-col">
+    <h4>{T.footer_nav_title}</h4>
+    <ul>
+      <li><a href="#galerij">{T.footer_nav_cakes}</a></li>
+      <li><a href="#bestelling">{T.footer_nav_order}</a></li>
+      <li><a href="#contact">{T.footer_nav_contact}</a></li>
+    </ul>
+  </div>
+  <div class="footer-col">
+    <h4>{T.footer_contact_title}</h4>
+    <ul>
+      <li><a href="mailto:info@sb-bakery.nl">info@sb-bakery.nl</a></li>
+    </ul>
+  </div>
+</footer>
+<div class="footer-bottom">{T.footer_bottom}</div>
