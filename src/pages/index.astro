@@ -6,6 +6,7 @@ import About from '../components/About.astro'
 import WorkGallery from '../components/WorkGallery.astro'
 import GalleryIsland from '../components/Gallery.jsx'
 import Courses from '../components/Courses.astro'
+import FAQ from '../components/FAQ.astro'
 import OrderIsland from '../components/Order.jsx'
 import Footer from '../components/Footer.astro'
 import '../index.css'
@@ -23,6 +24,7 @@ const lang = 'nl'
   <WorkGallery />
   <GalleryIsland lang={lang} client:load />
   <Courses lang={lang} />
+  <FAQ lang={lang} />
   <OrderIsland lang={lang} client:load />
   <Footer lang={lang} />
 </Layout>

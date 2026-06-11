@@ -113,7 +113,46 @@ export const translations = {
     footer_nav_order: 'Bestellen',
     footer_nav_contact: 'Contact',
     footer_contact_title: 'Contact',
+    footer_social_title: 'Volg ons',
+    footer_privacy: 'Privacybeleid',
     footer_bottom: '© 2026 SB — Alle rechten voorbehouden',
+
+    // FAQ
+    faq_tag: 'Veelgestelde vragen',
+    faq_title_pre: 'Alles wat u wilt ',
+    faq_title_em: 'weten',
+    faq_q1: 'Hoe ver van tevoren moet ik bestellen?',
+    faq_a1: 'Minimaal 2 weken van tevoren. In drukke perioden (feestdagen, trouwseizoen) adviseer ik 4 weken. Zo zorg ik voor de perfecte taart zonder haast.',
+    faq_q2: 'Wat kosten de taarten?',
+    faq_a2: 'Taarten starten vanaf €45. De exacte prijs hangt af van formaat, design en decoratie. Na uw aanvraag ontvangt u altijd een persoonlijke offerte — gratis en vrijblijvend.',
+    faq_q3: 'Bezorgen jullie, of moet ik ophalen?',
+    faq_a3: 'Beide opties zijn mogelijk. Bezorging is beschikbaar in de regio. De locatie en eventuele bezorgkosten worden besproken bij uw aanvraag.',
+    faq_q4: 'Zijn de taarten halal en glutenvrij?',
+    faq_a4: 'Alle taarten zijn 100% halal. Glutenvrije taarten zijn mogelijk op aanvraag — vermeld dit gewoon in het formulier.',
+    faq_q5: 'Kan ik een specifiek design of thema aanvragen?',
+    faq_a5: 'Absoluut. Ik maak elke taart op maat — van een simpele kleur tot een volledig gepersonaliseerd design. Stuur uw inspiratiefoto\'s mee in het formulier.',
+    faq_q6: 'Hoe neem ik het snelst contact op?',
+    faq_a6: 'Via het bestelformulier op deze pagina of direct via WhatsApp. Ik reageer altijd binnen 24 uur.',
+
+    // COOKIE BANNER
+    cookie_msg: 'Deze website gebruikt functionele cookies voor het contactformulier en lettertypen. Door verder te bladeren gaat u akkoord.',
+    cookie_accept: 'Accepteren',
+    cookie_decline: 'Weigeren',
+
+    // WHATSAPP
+    whatsapp_label: 'Chat via WhatsApp',
+
+    // PRIJSINDICATIE
+    price_label: 'Taarten vanaf',
+    price_amount: '€45',
+
+    // 404
+    not_found_title: 'Pagina niet gevonden',
+    not_found_msg: 'De pagina die u zoekt bestaat niet of is verplaatst.',
+    not_found_btn: '← Terug naar home',
+
+    // PRIVACY
+    privacy_title: 'Privacybeleid',
   },
 
   ti: {
@@ -230,6 +269,45 @@ export const translations = {
     footer_nav_order: 'ምእዛዝ',
     footer_nav_contact: 'ርክብ',
     footer_contact_title: 'ርክብ',
+    footer_social_title: 'ኣስዕቡና',
+    footer_privacy: 'ናይ ብሕትነት ፖሊሲ',
     footer_bottom: '© 2026 SB — ኩሉ መሰላት ዝተሓለወ እዩ።',
+
+    // FAQ
+    faq_tag: 'ብዙሕ ዝሕተቱ ሕቶታት',
+    faq_title_pre: 'ክትፈልጥዎ ',
+    faq_title_em: 'ትደልዩ ዘለኹም',
+    faq_q1: 'ቅድሚ ክንደይ እዋን ምእዛዝ የድሊ?',
+    faq_a1: 'ቢውሑዱ 2 ሰሙን ቅድሚ ዕለቱ። ኣብ ብዙሕ ሕቶ ዘለዎ እዋናት (ናይ ሃገር በዓላት፡ ናይ መርዓ ወቕቲ) 4 ሰሙን ቅድሚ ምምጻእ ይምከር።',
+    faq_q2: 'ዋጋ ክንደይ እዩ?',
+    faq_a2: 'ኬክታት ካብ €45 ይጅምሩ። ልክዕ ዋጋ ብዓቐን፡ ዲዛይንን ዕጠቃን ይፈላለ። ጠለብካ ምስሰደድካ ብናጻ ናይ ዋጋ ሓሳብ ክንሰደልካ ኢና።',
+    faq_q3: 'ትምጽኡ ዲኹም ወይ ነናብ ገዛ ትሰዱ?',
+    faq_a3: 'ክልቲኡ ይከኣል። ናብ ከባቢ ምብጻሕ ይካኣል። ቦታን ናይ ምብጻሕ ወጻኢታትን ኣብ እዋን ጠለብ ክንዝቲ ኢና።',
+    faq_q4: 'ኬክታት ሓላልን ካብ ግሉተን ናጻን ድዮም?',
+    faq_a4: 'ኩሎም ኬክታት 100% ሓላል እዮም። ካብ ግሉተን ናጻ ኬክ ብጠለብ ይካኣል — ኣብ ቅጥዒ ጥቀስ።',
+    faq_q5: 'ፍሉይ ዲዛይን ወይ ቀለም ምሕታት ይከኣልዶ?',
+    faq_a5: 'እወ። ነፍሲ ወከፍ ኬክ ብናትካ ድሌት ይዳለው — ካብ ቀሊል ቀለም ክሳብ ምሉእ ፍሉይ ዲዛይን። ናትካ ፎቶ ናይ ሓሳብ ምስ ቅጥዒ ስደድ።',
+    faq_q6: 'ብቕልጡፍ ከመይ ርክብ ይካኣል?',
+    faq_a6: 'ብቅጥዒ ምምላእ ወይ ብቐጥታ ብ WhatsApp። ኣብ ውሽጢ 24 ሰዓታት ክንምልስ ኢና።',
+
+    // COOKIE BANNER
+    cookie_msg: 'እዚ ወብሳይት ናይ ምርኻብ ቅጥዒን ፊደላትን ኩኪታት ይጥቀም። ብምቕጻልካ ትሰማማዕ ኣለኻ።',
+    cookie_accept: 'ተቐበሎ',
+    cookie_decline: 'ኣይፋልን',
+
+    // WHATSAPP
+    whatsapp_label: 'ብ WhatsApp ዘራረብ',
+
+    // PRICE
+    price_label: 'ኬክታት ካብ',
+    price_amount: '€45',
+
+    // 404
+    not_found_title: 'ገጽ ኣይተረኽበን',
+    not_found_msg: 'እትደልዮ ገጽ የለን ወይ ቦታ ቀይሩ።',
+    not_found_btn: '← ናብ ገጽ ቤት ተመለስ',
+
+    // PRIVACY
+    privacy_title: 'ናይ ብሕትነት ፖሊሲ',
   }
 }
