@@ -1,43 +1,5 @@
 import { translations } from '../i18n/translations'
-
-const testimonials = [
-  {
-    nl: {
-      text: 'De bruidstaart overtrof al onze verwachtingen. Onze gasten bleven erover praten — zo mooi en zo lekker!',
-      name: 'Fatima & Yonas',
-      occasion: 'Bruidspaar, Rotterdam',
-    },
-    ti: {
-      text: 'ናይ መርዓ ኬክ ኩሎም ትጽቢትና ሓሊፉ። ኣጋይሽና ብዛዕብኡ ዝዛረቡ ነይሮም — ጽቡቕን ጥዑምን!',
-      name: 'ፋቲማ & ዮናስ',
-      occasion: 'ናይ መርዓ ጻዕዳ, ሮተርዳም',
-    },
-  },
-  {
-    nl: {
-      text: 'Voor mijn dochters verjaardag bestelde ik een verrassingstaart. Ze was compleet sprakeloos van blijdschap. Dank je, SB!',
-      name: 'Lisa van den Berg',
-      occasion: 'Verjaardagsfeest, Amsterdam',
-    },
-    ti: {
-      text: 'ን ልደት ጓለይ ናይ ደስታ ኬክ ኣዚዘ። ካብ ሓጎስ ዘረባ ሲኢና! የቐንየልኪ SB.',
-      name: 'ሊሳ ቫን ደን ቤርጅ',
-      occasion: 'ናይ ልደት ፌስታ, ኣምስተርዳም',
-    },
-  },
-  {
-    nl: {
-      text: 'Eindelijk een halal én glutenvrije taart die er prachtig uitziet én heerlijk smaakt. Echt een aanrader voor iedereen!',
-      name: 'Amina Tesfay',
-      occasion: 'Familiefeest, Den Haag',
-    },
-    ti: {
-      text: 'ናይ ሃላልን ካብ ግሉተን ናጻን ኬክ ምርካብ ኣጸቢቑ ሓጎሰና። ንኩሉ ዝምከር!',
-      name: 'ኣሚና ተስፋይ',
-      occasion: 'ናይ ቤተሰብ ፌስታ, ዲን ሃሽ',
-    },
-  },
-]
+import testimonials from '../data/testimonials'
 
 function Testimonials({ lang }) {
   const T = translations[lang]
