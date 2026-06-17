@@ -60,26 +60,26 @@ function Order({ lang }) {
           <form ref={formRef} onSubmit={handleSubmit}>
             <div className="form-grid">
               <div className="form-group">
-                <label>{T.label_firstname}</label>
-                <input type="text" name="voornaam" placeholder={T.ph_firstname} required />
+                <label htmlFor="f-voornaam">{T.label_firstname}</label>
+                <input id="f-voornaam" type="text" name="voornaam" placeholder={T.ph_firstname} required />
               </div>
               <div className="form-group">
-                <label>{T.label_lastname}</label>
-                <input type="text" name="achternaam" placeholder={T.ph_lastname} required />
+                <label htmlFor="f-achternaam">{T.label_lastname}</label>
+                <input id="f-achternaam" type="text" name="achternaam" placeholder={T.ph_lastname} required />
               </div>
             </div>
             <div className="form-group">
-              <label>{T.label_email}</label>
-              <input type="email" name="email" placeholder={T.ph_email} required />
+              <label htmlFor="f-email">{T.label_email}</label>
+              <input id="f-email" type="email" name="email" placeholder={T.ph_email} required />
             </div>
             <div className="form-group">
-              <label>{T.label_phone}</label>
-              <input type="tel" name="telefoon" placeholder={T.ph_phone} required />
+              <label htmlFor="f-telefoon">{T.label_phone}</label>
+              <input id="f-telefoon" type="tel" name="telefoon" placeholder={T.ph_phone} required />
             </div>
             <div className="form-grid">
               <div className="form-group">
-                <label>{T.label_type}</label>
-                <select name="soort_taart" className="order-select" required>
+                <label htmlFor="f-type">{T.label_type}</label>
+                <select id="f-type" name="soort_taart" className="order-select" required>
                   <option value="">{T.label_type}</option>
                   <option value={T.option_wedding}>{T.option_wedding}</option>
                   <option value={T.option_birthday}>{T.option_birthday}</option>
@@ -88,13 +88,20 @@ function Order({ lang }) {
                 </select>
               </div>
               <div className="form-group">
-                <label>{T.label_date}</label>
-                <input type="date" name="datum" required />
+                <label htmlFor="f-datum">{T.label_date}</label>
+                <input
+                  id="f-datum"
+                  type="date"
+                  name="datum"
+                  min={new Date().toISOString().split('T')[0]}
+                  required
+                />
               </div>
             </div>
             <div className="form-group">
-              <label>{T.label_wishes}</label>
+              <label htmlFor="f-wensen">{T.label_wishes}</label>
               <textarea
+                id="f-wensen"
                 name="wensen"
                 className="order-textarea"
                 placeholder={T.ph_wishes}

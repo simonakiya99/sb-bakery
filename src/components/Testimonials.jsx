@@ -1,4 +1,3 @@
-import { useLang } from '../context/LanguageContext'
 import { translations } from '../i18n/translations'
 
 const testimonials = [
@@ -40,12 +39,11 @@ const testimonials = [
   },
 ]
 
-function Testimonials() {
-  const { lang } = useLang()
+function Testimonials({ lang }) {
   const T = translations[lang]
 
   return (
-    <section className="testimonials-section" data-animate>
+    <section className="testimonials-section">
       <div className="section-header">
         <span className="section-tag">{T.testimonials_tag}</span>
         <h2 className="section-title">

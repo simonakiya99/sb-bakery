@@ -1,4 +1,9 @@
 ---
+const { lang = 'nl' } = Astro.props
+const altText = lang === 'ti'
+  ? (i) => `ብኢድ ዝተሰርሐ ኬክ ናይ SB Bakery — ${i}`
+  : (i) => `Handgemaakte taart van SB Bakery — creatie ${i}`
+
 const fallbacks = [
   'https://images.unsplash.com/photo-1535254973040-607b474cb50d?w=600&q=80',
   'https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=600&q=80',
@@ -24,7 +29,7 @@ const photos = Array.from({ length: 17 }, (_, i) => ({
       <div class="work-gallery-item">
         <img
           src={photo.src}
-          alt={`Handwerk ${photo.id}`}
+          alt={altText(photo.id)}
           loading="lazy"
           onerror={`this.onerror=null;this.src='${photo.fallback}'`}
         />
