@@ -1350,13 +1350,43 @@ footer {
 
 .about-img {
   width: 100%;
-  aspect-ratio: 3 / 4;
-  object-fit: cover;
-  object-position: center center;
+  height: auto;
   display: block;
   position: relative;
   z-index: 1;
-  filter: brightness(0.97) contrast(1.04) saturate(1.05);
+  filter: brightness(1.01) contrast(1.04) saturate(1.06);
+  box-shadow: 0 24px 64px rgba(0,0,0,0.13);
+  border-radius: 2px;
+}
+
+.about-badge {
+  position: absolute;
+  bottom: 28px;
+  right: -22px;
+  z-index: 3;
+  background: var(--bg-white);
+  border: 1px solid var(--gold);
+  padding: 14px 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  box-shadow: 0 8px 28px rgba(0,0,0,0.10);
+}
+
+.about-badge-icon {
+  color: var(--gold);
+  font-size: 1.1rem;
+}
+
+.about-badge-text {
+  font-family: var(--font-serif);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: var(--text-dark);
+  text-align: center;
+  line-height: 1.5;
+  text-transform: uppercase;
 }
 
 .about-content {
@@ -1875,7 +1905,8 @@ body.lang-ti .footer-logo {
   .about-layout { grid-template-columns: 1fr; gap: 2.5rem; }
   .about-img-frame::before { display: none; }
   .about-img-frame::after { display: none; }
-  .about-img { aspect-ratio: 4 / 3; }
+  .about-img { height: auto; }
+  .about-badge { display: none; }
 
   /* Courses */
   .courses-grid { grid-template-columns: 1fr; }
