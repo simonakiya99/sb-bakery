@@ -9,6 +9,7 @@ import Testimonials from '../../components/Testimonials.jsx'
 import Courses from '../../components/Courses.astro'
 import FAQ from '../../components/FAQ.astro'
 import OrderIsland from '../../components/Order.jsx'
+import CourseEnrollIsland from '../../components/CourseEnroll.jsx'
 import Footer from '../../components/Footer.astro'
 import '../../index.css'
 
@@ -28,5 +29,6 @@ const lang = 'ti'
   <Courses lang={lang} />
   <FAQ lang={lang} />
   <OrderIsland lang={lang} client:load />
+  <CourseEnrollIsland lang={lang} client:load />
   <Footer lang={lang} />
 </Layout>

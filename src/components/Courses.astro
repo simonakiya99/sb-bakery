@@ -69,13 +69,7 @@ const courses = [
   document.querySelectorAll('.enroll-btn').forEach(btn => {
     btn.addEventListener('click', () => {
       const courseName = btn.dataset.course
-
-      const textarea = document.querySelector('.order-textarea')
-      if (textarea) {
-        textarea.value = courseName
-      }
-
-      document.getElementById('bestelling')?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      window.dispatchEvent(new CustomEvent('course-enroll', { detail: { courseName } }))
     })
   })
 </script>

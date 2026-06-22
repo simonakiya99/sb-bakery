@@ -106,6 +106,13 @@ export const translations = {
     courses_btn: 'Inschrijven',
     courses_note: '* Exacte data en locaties worden besproken bij aanmelding.',
 
+    // INSCHRIJFFORMULIER
+    enroll_title: 'Inschrijven voor cursus',
+    enroll_subtitle: 'Vul uw gegevens in en wij nemen contact met u op.',
+    enroll_btn: 'Inschrijven →',
+    enroll_success: '✓ Bedankt! We nemen zo snel mogelijk contact met u op.',
+    enroll_error: '✗ Er ging iets mis. Probeer het opnieuw.',
+
     // FOOTER
     footer_desc: 'Ambachtelijke luxe taarten gemaakt met liefde en passie. Voor elk bijzonder moment in uw leven.',
     footer_nav_title: 'Navigatie',
@@ -261,6 +268,13 @@ export const translations = {
     courses_price_label: 'ዋጋ',
     courses_btn: 'ተመዝገብ',
     courses_note: '* ልክዕ ዕለትን ቦታን ኣብ እዋን ምዝገባ ክንነግረካ ኢና።',
+
+    // INSCHRIJFFORMULIER
+    enroll_title: 'ኮርስ ምዝገባ',
+    enroll_subtitle: 'ሓበሬታኹም ምልኡ፤ ቀልጢፍና ክንረኽበኩም ኢና።',
+    enroll_btn: 'ተመዝገብ →',
+    enroll_success: '✓ የቐንየልና! ብቕልጡፍ ክንረኽበኩም ኢና።',
+    enroll_error: '✗ ጌጋ ተፈጢሩ። በጃኻ እንደገና ፈትን።',
 
     // FOOTER
     footer_desc: 'ብኢድ ዝተዳለወ፡ ብፍቕርን ብሓጎስ ስምዒትን ዝተሰንከተ ምኡዝ ኬክ። ንነፍሲ ወከፍ ኣብ ህይወትካ ዘጋጥሙ ፍሉያት እዋናት።',
