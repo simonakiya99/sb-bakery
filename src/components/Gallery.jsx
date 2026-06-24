@@ -1,114 +1,170 @@
-import { useState } from 'react'
-import { useLang } from '../context/LanguageContext'
+import { useState, useEffect } from 'react'
 import { translations } from '../i18n/translations'
 
 const cakes = [
   {
     id: 1,
-    title: { nl: 'Romantische Bruidstaart', ti: 'ሮማንቲካዊ ናይ መርዓ ኬክ' },
-    category: 'bruiloft',
-    price: '€180',
+    title: { nl: 'Gouden Accent Taart', ti: 'ናይ ወርቂ ኣገልግሎት ቀንዲ' },
+    category: 'speciaal',
     desc: {
-      nl: 'Drielaags fondanttaart met gouden accenten en verse rozen.',
-      ti: 'ሰለስተ ጽፍሒ ናይ ፎንዳን ኬክ ምስ ናይ ወርቂ ስፍሓትን ሓደሽቲ ጽጌረዳን።'
+      nl: 'Strakke taart met wit glazuur, gouden strepen en parelmoeren details.',
+      ti: 'ጽሩይ ኬክ ብስንክ ንጥፍ ወርቂ ስግንዛብን ኣብ ናይ መርቀቕ ክብረታትን።'
     },
     img: 'https://images.unsplash.com/photo-1535254973040-607b474cb50d?w=600&q=80'
   },
   {
     id: 2,
-    title: { nl: 'Klassieke Witte Bruidstaart', ti: 'ክላሲካዊ ጻዕዳ ናይ መርዓ ኬክ' },
-    category: 'bruiloft',
-    price: '€220',
+    title: { nl: 'Hartvormige Verjaardagstaart', ti: 'ናይ ልደት ልቢ ቀንዲ' },
+    category: 'verjaardag',
     desc: {
-      nl: 'Elegante witte taart met parelmoer decoratie en suikerbloemen.',
-      ti: 'ናይ ዕንቍ ሕብርን ናይ ሽኮር ዕምባባን ዘለዎ ጸጋዕ ጻዕዳ ኬክ።'
+      nl: 'Romantische hartvormige taart met zachte crème en gouden tekst.',
+      ti: 'ርእይቶ ልቢ ኬክ ብሓርነት ጥውቕ ባእኳን ንጥፍ ወርቂ ጽሑፍ።'
     },
     img: 'https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=600&q=80'
   },
   {
     id: 3,
-    title: { nl: 'Gouden Luxe Bruidstaart', ti: 'ናይ ወርቂ ሉኹስ ናይ መርዓ ኬክ' },
+    title: { nl: 'Bride-to-Be Taart', ti: 'ናይ ሰርግ ሰብኣዊ ኬክ' },
     category: 'bruiloft',
-    price: '€250',
     desc: {
-      nl: 'Vijflaagse taart met bladgoud en handgeschilderde details.',
-      ti: 'ሓሙሽተ ጽፍሒ ዘለዎ ናይ ወርቂ ቅጠልን ብኢድ ዝተሳእለ ዝርዝርን ዘለዎ ኬክ።'
+      nl: 'Prachtige bruidstaart met elegante topper en subtiele parels.',
+      ti: 'ጽቡቕ ናይ ሰርግ ኬክ ብርካታ ጌጋን ኣንጻር ብዝጥብ ፐርል።'
     },
     img: 'https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?w=600&q=80'
   },
   {
     id: 4,
-    title: { nl: 'Verjaardagstaart Roze', ti: 'ቀያሕ ናይ ልደት ኬክ' },
+    title: { nl: 'Pastel Verjaardagscake', ti: 'ዕማዪ ልደት ኬክ' },
     category: 'verjaardag',
-    price: '€65',
     desc: {
-      nl: 'Vrolijke roze taart met sprinkles en gepersonaliseerde tekst.',
-      ti: 'ሕብራዊ ናይ ልደት ኬክ ምስ ፍሉይ ጽሑፍ።'
+      nl: 'Dromerige taart met perzikroze bloemen en luxe gouden details.',
+      ti: 'ሓርነታዊ ኬክ ብገርም ናይ ፓስተል አበባትን ወርቂ ኣብርገኛን።'
     },
     img: 'https://images.unsplash.com/photo-1558636508-e0db3814bd1d?w=600&q=80'
   },
   {
     id: 5,
-    title: { nl: 'Chocolade Verjaardagstaart', ti: 'ናይ ቸኮሌት ልደት ኬክ' },
-    category: 'verjaardag',
-    price: '€70',
+    title: { nl: 'Bloemen & Kersen Taart', ti: 'ናይ አበባን ቀለማዊ ኖርማል ኬክ' },
+    category: 'speciaal',
     desc: {
-      nl: 'Rijke chocoladetaart met ganache en goudkleurige decoratie.',
-      ti: 'ሃብታም ናይ ቸኮሌት ኬክ ምስ ናይ ወርቂ ሕብሪ ጌጋ።'
+      nl: 'Luxe taart met verse bloemen, kersen en een zachte crème afwerking.',
+      ti: 'ክብረታዊ ኬክ ብንጽሕና አበባታትን ቀለማዊ ቀርሲን።'
     },
     img: 'https://images.unsplash.com/photo-1606890737304-57a1ca8a5b62?w=600&q=80'
   },
   {
     id: 6,
-    title: { nl: 'Regenboog Verjaardagstaart', ti: 'ናይ ቀስተ ደበና ልደት ኬክ' },
-    category: 'verjaardag',
-    price: '€75',
+    title: { nl: 'Roze Bloemencake', ti: 'ናይ አበባ ስግንዛ ኬክ' },
+    category: 'speciaal',
     desc: {
-      nl: 'Kleurrijke laagjestaart — perfect voor kinderverjaardagen.',
-      ti: 'ሕብረ-ሕብሪ ናይ ጽፍሒ ኬክ — ንናይ ቆልዑ ልደት ፍጹም።'
+      nl: 'Romantische tweelaagse creamcake met roze bloemdecoratie en een luxe finish.',
+      ti: 'ሓርነታዊ ሁለት ደረጃ ኬክ ብሮዝ አበባታትን ፍቅሪ ልብን።'
     },
     img: 'https://images.unsplash.com/photo-1562777717-dc6984f65a63?w=600&q=80'
   },
   {
     id: 7,
-    title: { nl: 'Glutenvrije Citroentaart', ti: 'ናይ ሎሚ ኬክ ብዘይ ግሉተን' },
+    title: { nl: 'Jubileumtaart met Rozen', ti: 'ናይ 25 ኣመት ቀረጺ ኬክ' },
     category: 'speciaal',
-    price: '€75',
     desc: {
-      nl: 'Frisse citroentaart, 100% glutenvrij en heerlijk luchtig.',
-      ti: 'ሓደሽቲ ናይ ሎሚ ኬክ፣ 100% ካብ ግሉተን ናጻ።'
+      nl: 'Feestelijke taart met verse rozen, gouden cijfers en een elegante presentatie.',
+      ti: 'እንቋዕ 25 ዓመት ኬክ ብሮዝን ወርቂ ቁጽሪን ንዕረፍቲ ዝተጣለወ።'
     },
     img: 'https://images.unsplash.com/photo-1519869325930-281384150729?w=600&q=80'
   },
   {
     id: 8,
-    title: { nl: 'Vegan Chocoladetaart', ti: 'ቪጋን ናይ ቸኮሌት ኬክ' },
+    title: { nl: 'Chocolade Signature Cake', ti: 'ናይ ቸኮሌት ዘይምረኸት ኬክ' },
     category: 'speciaal',
-    price: '€80',
     desc: {
-      nl: 'Rijke vegan chocoladetaart zonder dierlijke producten.',
-      ti: 'ሃብታም ቪጋን ናይ ቸኮሌት ኬክ ብዘይ ናይ እንስሳ ፍርያት።'
+      nl: 'Strakke chocoladecake met glanzende afwerking en modern bloemendecor.',
+      ti: 'ዝጽበቀ ቸኮሌት ኬክ ብዝንብር ኣበባን ናይ እዋን ኣብርግኛን።'
     },
     img: 'https://images.unsplash.com/photo-1571115177098-24ec42ed204d?w=600&q=80'
   },
   {
     id: 9,
-    title: { nl: 'Halal Aardbeientaart', ti: 'ሃላል ናይ ሓምሓም ኬክ' },
+    title: { nl: 'Jubileum Celebration Taart', ti: 'ናይ ምትእዛዛ ዕለት ኬክ' },
     category: 'speciaal',
-    price: '€70',
     desc: {
-      nl: 'Luchtige aardbeientaart met halal gecertificeerde ingrediënten.',
-      ti: 'ሃሊ ናይ ሓምሓም ኬክ ምስ ሃላል ዝተረጋገጹ ረቛሒታት።'
+      nl: 'Feestelijke taart met luxe rozen, parelaccenten en verfijnde details.',
+      ti: 'እንቋዕ እዋን ኬክ ብሮዝን ፐርልን ዘውትር ኣገልግሎት።'
     },
     img: 'https://images.unsplash.com/photo-1488477181946-6428a0291777?w=600&q=80'
+  },
+  {
+    id: 10,
+    title: { nl: 'Handgemaakte Creatie', ti: 'ብኢድ ዝተሰርሐ ኬክ' },
+    category: 'speciaal',
+    desc: { nl: 'Unieke handgemaakte taart op maat.', ti: 'ፍሉይ ብኢድ ዝተሰርሐ ኬክ።' },
+    img: 'https://images.unsplash.com/photo-1535254973040-607b474cb50d?w=600&q=80'
+  },
+  {
+    id: 11,
+    title: { nl: 'Elegante Bruidstaart', ti: 'ጸጋዕ ናይ መርዓ ኬክ' },
+    category: 'bruiloft',
+    desc: { nl: 'Stijlvolle bruidstaart met verfijnde afwerking.', ti: 'ጸጋዕ ናይ መርዓ ኬክ ብዝጥዕም ኣሰራርሓ።' },
+    img: 'https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=600&q=80'
+  },
+  {
+    id: 12,
+    title: { nl: 'Feestelijke Verjaardagstaart', ti: 'ናይ ምኽባር ልደት ኬክ' },
+    category: 'verjaardag',
+    desc: { nl: 'Vrolijke verjaardagstaart voor een onvergetelijk feest.', ti: 'ሕጉስ ናይ ልደት ኬክ ንዘይምርሳዕ ፌስታ።' },
+    img: 'https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?w=600&q=80'
+  },
+  {
+    id: 13,
+    title: { nl: 'Luxe Taartcreatie', ti: 'ሉኹስ ናይ ኬክ ስርሐ' },
+    category: 'speciaal',
+    desc: { nl: 'Luxueuze taart met gouden details en premium afwerking.', ti: 'ሉኹስ ኬክ ምስ ናይ ወርቂ ዝርዝርን ፍሉይ ኣሰራርሓን።' },
+    img: 'https://images.unsplash.com/photo-1558636508-e0db3814bd1d?w=600&q=80'
+  },
+  {
+    id: 14,
+    title: { nl: 'Romantische Taart', ti: 'ሮማንቲካዊ ኬክ' },
+    category: 'bruiloft',
+    desc: { nl: 'Romantische taart perfect voor speciale gelegenheden.', ti: 'ሮማንቲካዊ ኬክ ንፍሉያት ናይ ህይወት ግዜያት።' },
+    img: 'https://images.unsplash.com/photo-1606890737304-57a1ca8a5b62?w=600&q=80'
+  },
+  {
+    id: 15,
+    title: { nl: 'Bijzondere Gelegenheidstaart', ti: 'ፍሉይ ኣጋጣሚ ኬክ' },
+    category: 'speciaal',
+    desc: { nl: 'Prachtige taart voor uw meest bijzondere moment.', ti: 'ጽቡቕ ኬክ ንዝዓቢ ፍሉይ ግዜኹም።' },
+    img: 'https://images.unsplash.com/photo-1562777717-dc6984f65a63?w=600&q=80'
+  },
+  {
+    id: 16,
+    title: { nl: 'Klassieke Verjaardagstaart', ti: 'ክላሲካዊ ናይ ልደት ኬክ' },
+    category: 'verjaardag',
+    desc: { nl: 'Tijdloze verjaardagstaart met een persoonlijk tintje.', ti: 'ዘይምርሳዕ ናይ ልደት ኬክ ምስ ውልቃዊ ሕብሪ።' },
+    img: 'https://images.unsplash.com/photo-1519869325930-281384150729?w=600&q=80'
+  },
+  {
+    id: 17,
+    title: { nl: 'Creatieve Maatwerktaart', ti: 'ፍጡር ናይ ምርጫ ኬክ' },
+    category: 'speciaal',
+    desc: { nl: 'Volledig op maat gemaakte taart naar uw wensen.', ti: 'ምሉእ ብምሉእ ብመሰረት ድሌትኩም ዝተሰርሐ ኬክ።' },
+    img: 'https://images.unsplash.com/photo-1571115177098-24ec42ed204d?w=600&q=80'
   }
 ]
 
-function Gallery() {
+function Gallery({ lang }) {
   const [active, setActive] = useState('alle')
   const [hoveredId, setHoveredId] = useState(null)
-  const { lang } = useLang()
   const T = translations[lang]
+
+  useEffect(() => {
+    const reset = () => setHoveredId(null)
+    document.addEventListener('touchstart', reset, { passive: true })
+    return () => document.removeEventListener('touchstart', reset)
+  }, [])
+
+  const handleCardTouch = (e, cakeId) => {
+    e.stopPropagation()
+    setHoveredId(cakeId)
+  }
 
   const filters = [
     { key: 'alle', label: T.filter_all },
@@ -138,7 +194,7 @@ function Gallery() {
   }
 
   return (
-    <section className="gallery-section" id="galerij" data-animate>
+    <section className="gallery-section" id="galerij">
       <div className="section-header">
         <span className="section-tag">{T.gallery_tag}</span>
         <h2 className="section-title">{T.gallery_title_pre}<em>{T.gallery_title_em}</em></h2>
@@ -164,12 +220,14 @@ function Gallery() {
             className="gallery-card"
             onMouseEnter={() => setHoveredId(cake.id)}
             onMouseLeave={() => setHoveredId(null)}
+            onTouchStart={(e) => handleCardTouch(e, cake.id)}
           >
             <div className="gallery-img-wrap">
               <img
-                src={cake.img}
+                src={`/gallery/gallery-${cake.id}.png`}
                 alt={cake.title[lang]}
                 loading="lazy"
+                onError={(e) => { e.currentTarget.src = cake.img }}
                 style={{
                   transform: hoveredId === cake.id ? 'scale(1.08)' : 'scale(1)',
                   transition: 'transform 0.6s ease'
