@@ -2,8 +2,6 @@
 import { translations } from '../i18n/translations.js'
 const { lang } = Astro.props
 const T = translations[lang]
-const nlUrl = '/'
-const tiUrl = '/ti/'
 ---
 <nav class="navbar" id="navbar">
   <div class="nav-logo">
@@ -21,10 +19,6 @@ const tiUrl = '/ti/'
 
   <div class="navbar-right desktop-only">
     <a href="#bestelling" class="nav-cta">{T.nav_cta}</a>
-    <div class="lang-switcher">
-      <a href={nlUrl} class={`lang-btn ${lang === 'nl' ? 'active' : ''}`}>NL</a>
-      <a href={tiUrl} class={`lang-btn ${lang === 'ti' ? 'active' : ''}`}>TI</a>
-    </div>
   </div>
 
   <button class="hamburger" id="hamburger" aria-label="Menu openen">
@@ -43,10 +37,6 @@ const tiUrl = '/ti/'
     </ul>
     <div class="mobile-menu-bottom">
       <a href="#bestelling" class="nav-cta">{T.nav_cta}</a>
-      <div class="lang-switcher">
-        <a href={nlUrl} class={`lang-btn ${lang === 'nl' ? 'active' : ''}`}>NL</a>
-        <a href={tiUrl} class={`lang-btn ${lang === 'ti' ? 'active' : ''}`}>TI</a>
-      </div>
     </div>
   </div>
 </nav>
