@@ -1380,7 +1380,7 @@ footer {
 }
 
 .cert-logo {
-  height: 130px;
+  height: 140px;
   width: auto;
   margin-bottom: 4px;
   display: block;
@@ -1395,60 +1395,62 @@ footer {
 
 .cert-title {
   font-family: 'Alex Brush', cursive;
-  font-size: 52px;
+  font-size: 66px;
   font-weight: 400;
-  color: #C9A84C;
+  color: #B8943A;
   letter-spacing: 0.01em;
   line-height: 1.1;
-  margin-bottom: 14px;
+  margin-bottom: 18px;
 }
 
 .cert-name-label {
   font-family: 'Cormorant Garamond', 'Playfair Display', serif;
-  font-size: 15px;
+  font-size: 20px;
   font-style: italic;
-  color: #666;
-  margin-bottom: 4px;
+  color: #444;
+  margin-bottom: 6px;
 }
 
 .cert-name {
   font-family: 'Alex Brush', cursive;
-  font-size: 50px;
+  font-size: 62px;
   font-weight: 400;
   color: #1a1a1a;
-  min-height: 52px;
+  min-height: 64px;
   line-height: 1.15;
-  margin-bottom: 12px;
+  margin-bottom: 14px;
 }
 
 .cert-mid-rule {
   width: 52px;
   height: 1.5px;
   background: #C9A84C;
-  margin-bottom: 14px;
+  margin-bottom: 20px;
 }
 
 .cert-body-text {
   font-family: 'Cormorant Garamond', 'Playfair Display', serif;
-  font-size: 13.5px;
+  font-size: 22px;
   font-style: italic;
-  color: #444;
-  line-height: 1.6;
-  max-width: 340px;
-  margin-bottom: 6px;
+  font-weight: 600;
+  color: #2a2a2a;
+  line-height: 1.55;
+  max-width: 620px;
+  margin-bottom: 12px;
 }
 
 .cert-wish-text {
   font-family: 'Cormorant Garamond', 'Playfair Display', serif;
-  font-size: 13px;
-  color: #777;
+  font-size: 18px;
+  font-weight: 500;
+  color: #4a4a4a;
   line-height: 1.5;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
 .cert-footer {
   display: flex;
-  gap: 60px;
+  gap: 80px;
   align-items: flex-end;
 }
 
@@ -1456,23 +1458,23 @@ footer {
   display: flex;
   align-items: baseline;
   gap: 6px;
-  border-bottom: 1px solid #999;
-  padding-bottom: 4px;
-  min-width: 130px;
+  border-bottom: 1px solid #888;
+  padding-bottom: 5px;
+  min-width: 190px;
   justify-content: center;
 }
 
 .cert-field-label {
   font-family: 'Montserrat', sans-serif;
-  font-size: 10.5px;
-  color: #C9A84C;
+  font-size: 14px;
+  color: #B8943A;
   font-weight: 600;
 }
 
 .cert-field-value {
   font-family: 'Montserrat', sans-serif;
-  font-size: 11px;
-  color: #333;
+  font-size: 15px;
+  color: #222;
   letter-spacing: 0.02em;
 }
 
@@ -1482,9 +1484,9 @@ footer {
 }
 
 .cert-signature-img {
-  height: 42px;
+  height: 54px;
   width: auto;
-  margin-bottom: -8px;
+  margin-bottom: -10px;
 }
 
 @media (max-width: 1200px) {
