@@ -1,13 +1,13 @@
 # La Douceur — Bakery website
 
-Website voor La Douceur, gebouwd met [Astro](https://astro.build) en React-componenten (islands), pure CSS, Supabase en EmailJS.
+Website voor La Douceur, gebouwd met [Astro](https://astro.build) en React-componenten (islands), pure CSS en Netlify (Forms, Identity, Git Gateway).
 
 ## Stack
 
 - **Astro 6** — static site generation
 - **React 19** — interactieve componenten (`@astrojs/react`)
-- **Supabase** — data (cake types)
-- **EmailJS** — bestelformulier
+- **Netlify Forms** — bestel- en inschrijfformulieren
+- **Netlify Identity + Git Gateway** — inloggen en foto's beheren op `/beheer`
 - **Netlify** — hosting/deploy (zie `netlify.toml`)
 
 ## Scripts
@@ -27,8 +27,8 @@ npm run lint     # ESLint
 - `src/i18n/` — vertalingen (`translations.js`)
 - `src/context/` — React context (taal, etc.)
 - `src/data/` — statische data
-- `src/lib/` — helpers/clients (o.a. Supabase)
-- `supabase/migrations/` — database migraties
+- `src/lib/` — helpers (o.a. Git Gateway)
+- `src/content/gallery/` — taarten in de galerij (JSON)
 - `scripts/` — losse utility scripts (bv. `remove_bg.py`)
 
 De site is momenteel volledig Nederlandstalig; de oude Tigrinya-routes (`/ti/...`) redirecten naar de Nederlandse pagina's.

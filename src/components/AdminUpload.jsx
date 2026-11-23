@@ -7,6 +7,8 @@ const CATEGORIES = [
   { value: 'speciaal', label: 'Speciaal' },
 ]
 
+const ALLOWED_TYPES = { 'image/jpeg': 'jpg', 'image/png': 'png', 'image/webp': 'webp' }
+
 function slugify(text) {
   return text
     .toLowerCase()
@@ -50,9 +52,13 @@ function AdminUpload({ user, onUploaded }) {
       try {
         imageBlob = await compressImage(imageFile)
       } catch (err) {
+        // Alleen echte foto-types als origineel uploaden: een .html- of .svg-bestand
+        // zou anders als pagina op het eigen domein komen te staan.
+        const safeExt = ALLOWED_TYPES[imageFile.type]
+        if (!safeExt) throw new Error(`Bestandstype niet toegestaan: ${imageFile.type || 'onbekend'}`, { cause: err })
         console.error('Comprimeren mislukt, upload originele foto:', err)
         imageBlob = imageFile
-        ext = (imageFile.name.split('.').pop() || 'jpg').toLowerCase()
+        ext = safeExt
       }
 
       const imagePath = `public/gallery/${baseName}.${ext}`
@@ -106,7 +112,7 @@ function AdminUpload({ user, onUploaded }) {
           <input
             id="a-foto"
             type="file"
-            accept="image/*"
+            accept="image/jpeg,image/png,image/webp"
             ref={fileInputRef}
             onChange={(e) => setImageFile(e.target.files?.[0] || null)}
             required
